@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="vendors/font-awesome.min.css">
+		<style>
+			body
+			{
+				margin: 0 ;
+				padding: 0 ;
+				font-family: sans-serif ;
+			}
+			/* ********************************************** about us section *************************************** */
+			.about
+			{
+
+				display: block ;
+				width: 100%;
+				height: auto;
+				overflow: hidden ;
+				color: #fff;
+			/*	border: 3px solid #f00;*/
+				background-color: #000;
+				padding-bottom: 50px; 
+				box-sizing: border-box ;
+				padding-top: 25px; 
+				padding-bottom: 25px; 
+			}
+			.about .aboutContainer
+			{
+				width: 90% ;
+				height: auto;
+				overflow: hidden ;
+			/*	border: 3px solid #0ff; */
+				margin: 20px auto ;
+			}
+			.about .aboutContainer .aboutH2   ,
+			.about .aboutContainer .aboutPara
+			{
+				text-align: center ;
+				text-transform: capitalize;
+				margin-top: 30px ;
+			}
+			.about .aboutContainer .aboutH2
+			{
+				font-size: 55px;
+				margin-bottom: 30px ;
+			}
+			.about .aboutContainer  .aboutPara
+			{
+				margin-bottom: 70px ;
+				font-size: 16px;	
+			}
+			.about .aboutContainer .aboutUsImg ,
+			.about .aboutContainer .aboutUsInfo
+			{
+				width: 48%;
+				float: left;
+				margin-left: 1%;
+				margin-right: 1%;
+			}
+			.about .aboutContainer .aboutUsInfo .rightPartPara
+			{
+				font-size: 14px;
+				line-height: 1.5 ;
+			}
+			.about .aboutContainer .aboutUsImg
+			{
+				text-align: center;
+				margin-top: 50px;
+			}
+			.about .aboutContainer .aboutUsImg img
+			{
+				width:350px;
+				height: 350px;
+				border-radius: 50% ;
+				border: 2px solid #fff; 
+			}
+
+			.about .aboutContainer .aboutPersonalInfo
+			{
+			/*	border: 2px solid #0ff; */
+				line-height: 2.2 ;
+			}
+			.about .aboutContainer .aboutUsInfo .projectNumPara
+			{
+			/*	clear: both ;*/
+				display: block;
+				margin-top: 60px;
+				margin-bottom: 10px;
+			}
+			.about .aboutContainer .aboutUsInfo .downloadCvBtn
+			{
+				width: 150px;
+				height: 42px;
+				padding: 10px;
+				background-color: chartreuse ;
+				text-transform: uppercase;
+				border: 0 ;
+				outline: 0 ;
+				font-weight: bold;
+				border-radius: 50px;
+				cursor: pointer ;
+			}
+			/* ----------------- project number paragraph -----------------  */
+			.about .aboutContainer .aboutUsInfo .aboutPersonalInfo  .projectNumPara
+			{
+				text-transform: capitalize ;
+				font-weight: bold ;
+			}
+			/* ----------------- project number span number -----------------  */
+			.about .aboutContainer .aboutPersonalInfo .projectNumClass
+			{
+				color: chartreuse ;
+				font-size: 35px ;
+			}
+			/* ----------------------------- each box has [ label and span ] -------------------------- */
+			.about .aboutContainer  .aboutUsInfo .aboutPersonalInfo .box
+			{
+				/*  span و label ياخذ سطر كامل وكل سطر هيظهر فيه  box عشان كل  */
+				clear: both;
+				display: block ;
+				width: 100%;
+				color: #f00;
+			}
+			/*  ---------------------- left and right part of aboutUs info ---------------------- */
+			.about .aboutContainer .aboutPersonalInfo .labelClass ,
+			.about .aboutContainer .aboutPersonalInfo .spanClass
+			{
+				width: 50% ;
+			}
+			/*  ---------------------- left  part of aboutUs info ---------------------- */
+			.about .aboutContainer .aboutPersonalInfo .labelClass
+			{
+				float: left ;
+				color: #fff;
+				font-weight: bold; 
+				text-transform: capitalize ;
+			}
+			/*  ---------------------- right part of aboutUs info ---------------------- */
+			.about .aboutContainer .aboutPersonalInfo .spanClass
+			{
+				float: right ; 
+				color: #999;
+			}
+			/* ################################ Responsive ################################ */
+			@media(min-width:0px) and (max-width:877px)
+			{
+				.about .aboutContainer .aboutUsImg ,
+				.about .aboutContainer .aboutUsInfo
+				{
+					float: none ;
+					width: 100% ;
+						margin-bottom: 50px;
+
+				}
+				.about .aboutContainer  .aboutPara
+				{
+					font-size: 16px;	
+					padding-left: 10px;
+					padding-right: 10px;
+					margin-bottom:50px;
+				}
+
+				.about .aboutContainer .aboutUsInfo .rightPartPara
+				{
+					text-align: center;
+					margin-bottom: 50px;
+				}	
+			}
+		</style>
+	</head>
+	<body>	
+		<!-- ************************* about us section ************************* -->
+		<div class="about" id="aboutId">
+			<div class="aboutContainer">
+				<h2 class="aboutH2">about us</h2>
+				<p class="aboutPara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum maiores, molestias ea reprehenderit, aliquam dignissimos. Laboriosam eius repellat blanditiis vel sint?</p>
+				<!-- ******************** left part : about us image ******************** -->
+				<div class="aboutUsImg">
+					<img src="images/headerImg1.jpg" alt="image not found">
+				</div>
+				<!-- ******************** right part : about us info ******************** -->
+				<div class="aboutUsInfo">
+					<p class="rightPartPara">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum maiores, molestias ea reprehenderit, aliquam dignissimos. Laboriosam eius repellat blanditiis vel sint?
+					</p>
+					<div class="aboutPersonalInfo">
+						<!-- ************ name box ************ -->
+						<div class="box">
+							<label class="labelClass">name : </label>
+							<span  class="spanClass" id="nameSpanId"></span>
+						</div>
+						<!-- ************ birth date box ************ -->
+						<div class="box">
+							<label class="labelClass">date of birth : </label>
+							<span  class="spanClass" id="birthdaySpanId"></span>
+						</div>
+						<!-- ************ address box ************ -->
+						<div class="box">
+							<label class="labelClass">address : </label>
+							<span  class="spanClass" id="addressSpanId"></span>
+						</div>
+						<!-- ************ email box ************ -->
+						<div class="box">
+							<label class="labelClass">email : </label>
+							<span  class="spanClass" id="emailSpanId"></span>
+						</div>
+						<!-- ************ zip code box ************ -->
+						<div class="box">
+							<label class="labelClass">zip code : </label>
+							<span  class="spanClass" id="zipCodeSpanId"></span>
+						</div>
+						<!-- ************ phone box ************ -->
+						<div class="box">
+							<label class="labelClass">phone : </label>
+							<span  class="spanClass" id="phoneSpanId"></span>
+						</div>
+						<!-- projects number -->
+						<p class="projectNumPara"><span class="projectNumClass"id="prohectNumId">0</span> project complete</p>
+						<!-- download button -->
+						<input type="button"class="downloadCvBtn" value="download cv">
+					</div>
+				</div>
+			</div>
+		</div>		
+		<script>
+			var aboutNameInterval 		= setInterval(aboutNameFunc 	, 600) 		,
+				aboutBirthDayInterval 	= setInterval(aboutBirthDayFunc , 600) 		,
+				aboutAddressInterval	= setInterval(aboutAddressFunc 	, 600) 		,
+				aboutEmailInterval		= setInterval(aboutEmailFunc 	, 600) 		,
+				aboutZipCodeInterval	= setInterval(aboutZipCodeFunc 	, 600)		,
+				aboutPhoneInterval 		= setInterval(aboutPhoneFunc 	, 600)		,
+				// هيزود 1 علي عدد المشاريع كل 50 ميللي ثعنية
+				aboutProjectsNumInterval = setInterval(aboutProjectsNumFunc , 50)	;
+			var aboutNameEl 	   = document.getElementById("nameSpanId"),
+				aboutBirthdayEl 	   = document.getElementById("birthdaySpanId"),
+				aboutEmailEl 	   = document.getElementById("emailSpanId") ,
+				aboutAddressEl 	   = document.getElementById("addressSpanId") ,
+				aboutZipCodeEl    = document.getElementById("zipCodeSpanId") ,
+				aboutPhoneEl 	   = document.getElementById("phoneSpanId") ,
+				aboutProjectsNumEl = document.getElementById("prohectNumId") ;
+
+			var aboutNameString ="steve williams",
+				aboutBirthdayString ="january 01,1980",
+				aboutEmailString ="stevewill@gmail.com",
+				aboutAddressString ="new work CA 829 USA",
+				aboutZipCodeString ="758844", 
+				aboutPhoneString ="+4854 384 0000", 
+				aboutProjectsNumVar = 0 ;
+
+			var aboutNameCounter 	 = 0 ,
+				aboutBirthDayCounter = 0 ,
+				aboutEmailCounter	 = 0 ,
+				aboutAddressCounter	 = 0 ,
+				aboutZipCodeCounter  = 0 ,
+				aboutPhoneCounter 	 = 0 ;
+		
+
+			function aboutNameFunc()
+			{
+				if( aboutNameCounter < aboutNameString.length )
+				{
+					aboutNameEl.innerHTML += aboutNameString[aboutNameCounter] ;
+					aboutNameCounter++;
+				}
+			}
+			function aboutBirthDayFunc()
+			{
+
+				if( aboutBirthDayCounter < aboutBirthdayString.length )
+				{
+					aboutBirthdayEl.innerHTML += aboutBirthdayString[aboutBirthDayCounter] ;
+					aboutBirthDayCounter++;
+				}	
+			}
+			function aboutEmailFunc()
+			{
+				if( aboutEmailCounter < aboutEmailString.length )
+				{
+					aboutEmailEl.innerHTML += aboutEmailString[aboutEmailCounter] ;
+					aboutEmailCounter++;
+				}
+			}
+			function aboutAddressFunc()
+			{
+				if( aboutAddressCounter < aboutAddressString.length )
+				{
+					aboutAddressEl.innerHTML += aboutAddressString[aboutAddressCounter] ;
+					aboutAddressCounter++;
+				}
+			}
+			function aboutZipCodeFunc()
+			{
+				if( aboutZipCodeCounter < aboutZipCodeString.length )
+					{
+						aboutZipCodeEl.innerHTML += aboutZipCodeString[aboutZipCodeCounter] ;
+						aboutZipCodeCounter++;
+					}
+			}
+			function aboutPhoneFunc()
+			{
+				if( aboutPhoneCounter < aboutPhoneString.length )
+					{
+						aboutPhoneEl.innerHTML += aboutPhoneString[aboutPhoneCounter] ;
+						aboutPhoneCounter++;
+					}
+			}
+			function aboutProjectsNumFunc()
+			{
+				if( aboutProjectsNumVar <= 120 )
+					{
+						aboutProjectsNumEl.innerHTML = aboutProjectsNumVar ;
+						aboutProjectsNumVar++;
+					}
+			}
+
+		</script>
+	</body>
+</html>

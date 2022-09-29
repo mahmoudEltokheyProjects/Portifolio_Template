@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="vendors/font-awesome.min.css">
+		<style>
+			body
+			{
+				padding: 0 ;
+				margin: 0 ;
+				font-family: sans-serif ;
+			}
+			/* ******************************************** my skills section ************************************* */
+			/* --------------------- skills parent -------------------- */
+			/* عشان المحتوي اللي موجود بداخل الديف يكون في المنتصف  */
+			.mySkills 
+			{
+				width: 100%;
+				height: auto;
+				overflow: hidden ;
+				color: #fff;
+			/*	border: 3px solid #ff0; */
+				box-sizing: border-box ;
+				background-color: #000;
+				padding-top: 25px; 
+				padding-bottom: 25px; 
+			}
+			.mySkills  .mySkillsContainer
+			{
+				width: 90% ;
+			/*	border: 3px solid #f0f; */
+				margin: 20px auto ;
+			}
+			.mySkills  .mySkillsContainer  .box
+			{
+				float: left;
+				width: 48%;
+				margin-left: 1%; 
+				margin-right: 1%;	
+			}
+			/* --------------  skills h2  -------------- */
+			.mySkills  .mySkillsContainer h2
+			{
+				text-align: center;
+				font-size: 45px;
+				text-transform: capitalize;
+			}
+			/* --------------  skills p  -------------- */
+			.mySkills  .mySkillsContainer  p
+			{
+				text-align: center ;
+				margin-bottom: 50px;
+			}
+			.mySkills  .mySkillsContainer  .box h4
+			{
+				margin-bottom: 10px ;
+			}
+			/* ----------- progressbar container  ----------- */
+			.mySkills  .mySkillsContainer  .box .progressbarContainer
+			{
+				position: relative;
+				width: 100%;
+				height: 8px;
+				overflow: hidden;
+				padding: 5px;
+				background-color: #333 ;
+				border-radius: 10px;
+			}
+			/* ----------- progressbar h4  ----------- */
+			.mySkills  .mySkillsContainer  .box h4
+			{
+				text-transform: capitalize; 
+			}
+			/* ------------------------- common properities of all green progressbar spans  -------------------------- */
+			.mySkills  .mySkillsContainer  .box span
+			{
+				transition:  200ms  ;
+			}
+			/* ------------------------- common properities of all progressbar  -------------------------- */
+			.mySkills  .mySkillsContainer  .box .progressbarContainer .progressbarFilling
+			{
+				position: absolute; 
+				left: 0 ;
+				top: 0 ;
+				height: 100%;
+				border-top-left-radius: 10px;
+				border-bottom-left-radius: 10px;
+				background-color: #0f0;
+				/* 30 milli-second كل smooth يتحرك فيتحرك بشكل progressbar عشان لما ال */
+				transition:  200ms  ;
+			}
+			/* ################################ Responsive ################################ */
+			@media(min-width:0px) and (max-width:850px)
+			{
+				.mySkills  .mySkillsContainer p
+				{
+					margin-bottom: 50px ;
+				}
+				.mySkills  .mySkillsContainer  .box
+				{
+					float: none;
+					width: 96%;
+					margin-left: 1%; 
+					margin-right: 1%;
+					margin-bottom: 20px;
+				}
+			}		
+		
+		</style>
+	</head>
+	<body>
+		<!-- ************************************** my skills section ************************************************** -->
+		<div class="mySkills" id="mySkillsId">
+			<div class="mySkillsContainer">
+				<h2>my skills</h2>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum maiores, molestias ea reprehenderit, aliquam dignissimos. Laboriosam eius repellat blanditiis vel sint?
+				</p>
+				<!-- ******************** box 1 ******************** -->
+				<div class="box">
+					<h4>photoshop</h4>
+					<!-- ---------------- progressbar 1 ---------------- -->
+					<span id="progressBar1Perentage"></span>
+					<div class="progressbarContainer">
+						<span class="progressbarFilling progressbar1Width" id="span1Id"></span>
+					</div>
+				</div>
+				<!-- ******************** box 2 ******************** -->
+				<div class="box">
+					<h4>jquery</h4>
+					<!-- ---------------- progressbar 2 ---------------- -->
+					<span id="progressBar2Perentage"></span>
+					<div class="progressbarContainer">
+						<span class="progressbarFilling progressbar2Width" id="span2Id"></span>
+					</div>
+				</div>
+				<!-- ******************** box 3 ******************** -->
+				<div class="box">
+					<h4>html5</h4>
+					<!-- ---------------- progressbar 3 ---------------- -->
+					<span id="progressBar3Perentage"></span>
+					<div class="progressbarContainer">
+						<span class="progressbarFilling progressbar3Width" id="span3Id"></span>
+					</div>
+				</div>
+				<!-- ******************** box 4 ******************** -->
+				<div class="box">
+					<h4>css3</h4>
+					<!-- ---------------- progressbar 4 ---------------- -->
+					<span id="progressBar4Perentage"></span>
+					<div class="progressbarContainer">
+						<span class="progressbarFilling progressbar4Width" id="span4Id"></span>
+					</div>
+				</div>
+				<!-- ******************** box 5 ******************** -->
+				<div class="box">
+					<h4>wordpress</h4>
+					<!-- ---------------- progressbar 5 ---------------- -->
+					<span id="progressBar5Perentage"></span>
+					<div class="progressbarContainer">
+						<span class="progressbarFilling progressbar5Width" id="span5Id"></span>
+					</div>
+				</div>
+				<!-- ******************** box 6 ******************** -->
+				<div class="box">
+					<h4>php</h4>
+					<!-- ---------------- progressbar 6 ---------------- -->
+					<span id="progressBar6Perentage"></span>
+					<div class="progressbarContainer">
+						<span class="progressbarFilling progressbar6Width" id="span6Id"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			// ##############################  my skills section : progressBar #####################################
+					// ********** progressbar elements **********
+				var progress1Bar = document.getElementById("span1Id") , 
+					progress2Bar = document.getElementById("span2Id") ,
+					progress3Bar = document.getElementById("span3Id") ,
+					progress4Bar = document.getElementById("span4Id") ,
+					progress5Bar = document.getElementById("span5Id") ,
+					progress6Bar = document.getElementById("span6Id") ,
+					 // progressbar percentage elements
+					percentage1  = document.getElementById("progressBar1Perentage"),
+					percentage2  = document.getElementById("progressBar2Perentage"),
+					percentage3  = document.getElementById("progressBar3Perentage"),
+					percentage4  = document.getElementById("progressBar4Perentage"),
+					percentage5  = document.getElementById("progressBar5Perentage"),
+					percentage6  = document.getElementById("progressBar6Perentage"),
+					// progressbar counters 
+					// progressbar 1 counter 
+					a = 0 ,
+					// progressbar 2 counter 
+					b = 0 ,
+					// progressbar 3 counter 
+					c = 0 ,
+					// progressbar 4 counter 
+					d = 0 ,
+					// progressbar 5 counter 
+					e = 0 ,
+					// progressbar 6 counter 
+					f = 0 ;
+			// ----------------------------  scroll هذا الكود موجود في الاعلي حيث هيتم تنفيذه عند عمل ----------------------------------
+				//	############## 10 milli-second كل  progressbar1Func هيتم النداء علي الدالة ##############
+			var progressbar1Var = setInterval(progressbar1Func , 60) ,
+				// 20 milli-second كل  progressbar2Func هيتم النداء علي الدالة
+				progressbar2Var = setInterval(progressbar2Func , 50) ,
+				// 30 milli-second كل  progressbar3Func هيتم النداء علي الدالة
+				progressbar3Var = setInterval(progressbar3Func , 40) ,
+				// 40 milli-second كل  progressbar4Func هيتم النداء علي الدالة
+				progressbar4Var = setInterval(progressbar4Func , 45) ,
+				// 50 milli-second كل  progressbar5Func هيتم النداء علي الدالة
+				progressbar5Var = setInterval(progressbar5Func , 55) ,
+				// 60 milli-second كل  progressbar6Func هيتم النداء علي الدالة
+				progressbar6Var = setInterval(progressbar6Func , 20) ;
+
+					/* --------------------------- progressbar 1 function ---------------------------- */
+					function progressbar1Func()
+					{
+						if( a <= 90)
+						{
+				/* 10 milli-second كل progressbar1 بتاع ال width هيزود 1 في المائة علي ال progressbar1Func في كل مرة هيتم فيها النداء علي الدالة */
+							progress1Bar.style.width= a+"%";
+							/*  في كل مرة هزود علي قيمة النسبة المئوية قيمة 1 في المائة  */
+							percentage1.innerHTML = a + "%";
+							/* progressbar هخلي النسبة المئوية تزداد و تتحرك مع ال */
+							percentage1.style.marginLeft = a + "%" ;	
+							a++ ;				
+						}
+					}
+					/* --------------------------- progressbar 2 function ---------------------------- */
+					function progressbar2Func()
+					{
+						if( b <= 75 )
+						{
+				/* 20 milli-second كل progressbar2 بتاع ال width هيزود 1 في المائة علي ال progressbar2Func في كل مرة هيتم فيها النداء علي الدالة */
+							progress2Bar.style.width= b+"%";
+							/*  في كل مرة هزود علي قيمة النسبة المئوية قيمة 1 في المائة  */
+							percentage2.innerHTML = b + "%";
+							/* progressbar هخلي قيمة النسبة المئوية تزداد و تتحرك مع ال */
+							percentage2.style.marginLeft = b + "%" ;
+							b++ ;	
+						}
+					}
+					/* --------------------------- progressbar 3 function ---------------------------- */
+					function progressbar3Func()
+					{
+						if( c <= 85 )
+						{
+				/* 30 milli-second كل progressbar3 بتاع ال width هيزود 1 في المائة علي ال progressbar3Func في كل مرة هيتم فيها النداء علي الدالة */
+							progress3Bar.style.width= c+"%";
+							/*  في كل مرة هزود علي قيمة النسبة المئوية قيمة 1 في المائة  */
+							percentage3.innerHTML = c + "%";
+							/* progressbar هخلي النسبة المئوية تزداد و تتحرك مع ال */
+							percentage3.style.marginLeft = c + "%" ;	
+							c++ ;
+						}
+					}
+					/* --------------------------- progressbar 4 function ---------------------------- */
+					function progressbar4Func()
+					{
+						if( d <= 80 )
+						{
+				/* 40 milli-second كل progressbar4 بتاع ال width هيزود 1 في المائة علي ال progressbar4Func في كل مرة هيتم فيها النداء علي الدالة */
+							progress4Bar.style.width= d+"%";
+							/*  في كل مرة هزود علي قيمة النسبة المئوية قيمة 1 في المائة  */
+							percentage4.innerHTML = d + "%";
+							/* progressbar هخلي قيمة النسبة المئوية تزداد و تتحرك مع ال */
+							percentage4.style.marginLeft = d + "%" ;
+							d++ ;	
+						}
+					}
+					/* --------------------------- progressbar 5 function ---------------------------- */
+					function progressbar5Func()
+					{
+						if( e <= 60 )
+						{
+
+				/* 50 milli-second كل progressbar5 بتاع ال width هيزود 1 في المائة علي ال progressbar5Func في كل مرة هيتم فيها النداء علي الدالة */
+							progress5Bar.style.width= e+"%";
+							/*  في كل مرة هزود علي قيمة النسبة المئوية قيمة 1 في المائة  */
+							percentage5.innerHTML = e + "%";
+							/* progressbar هخلي قيمة النسبة المئوية تزداد و تتحرك مع ال */
+							percentage5.style.marginLeft = e + "%" ;
+							e++ ;
+						}
+					}
+					/* --------------------------- progressbar 6 function ---------------------------- */
+					function progressbar6Func()
+					{
+						if( f <= 68 )
+						{
+				/* 60 milli-second كل progressbar6 بتاع ال width هيزود 1 في المائة علي ال progressbar6Func في كل مرة هيتم فيها النداء علي الدالة */
+							progress6Bar.style.width= f+"%";
+							/*  في كل مرة هزود علي قيمة النسبة المئوية قيمة 1 في المائة  */
+							percentage6.innerHTML = f + "%";
+							/* progressbar هخلي قيمة النسبة المئوية تزداد و تتحرك مع ال */
+							percentage6.style.marginLeft = f + "%" ;
+							f++ ;
+						}
+					}
+		</script>
+	</body>
+</html>

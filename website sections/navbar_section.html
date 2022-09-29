@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="vendors/font-awesome.min.css">
+		<style>
+			body
+			{
+				padding: 0 ;
+				margin: 0 ;
+				font-family: sans-serif; 
+			}
+			/* ************************************* navbar section ******************************************* */
+			.navbar
+			{
+			/*	position: fixed ;*/
+			/*	border: 2px solid #0ff;*/
+				width: 100%;
+				height: auto ;
+				overflow: hidden ;
+				background-color: #333 ;
+				box-sizing: border-box;
+			}
+			.navbar .navbarContainer
+			{
+			/*	border: 2px solid #f0f;*/
+				width: 90%;
+				height: auto ;
+				overflow: hidden ;	
+				margin: 0px auto;
+			}
+			.navbar .navbarContainer .logoContainer  ,
+			.navbar .navbarContainer .linksContainer
+			{
+				/* width من ضمن ال border , padding عشان لا يتم حساب ال */
+				box-sizing: border-box;
+			}
+			.navbar .navbarContainer .logoContainer 
+			{
+				float: left;
+				width: 20%;
+			/*	border: 2px solid #ff0;*/
+			}
+			.navbar .navbarContainer .logoContainer h2 a
+			{
+				text-decoration: none ;
+				text-transform: uppercase ;
+				color: #fff ;
+				font-size: 35px;
+			}
+			.navbar .navbarContainer .linksContainer
+			{
+				width: 80%;
+				float: right;
+				text-align: right;
+			/*	border: 2px solid #f00;			*/
+			}
+			.navbar .navbarContainer .linksContainer ul
+			{
+				list-style: none ;
+				padding: 0 ;
+				margin-top: 25px;	
+			}
+			.navbar .navbarContainer .linksContainer ul li
+			{
+				display: inline-block ;
+				margin: 10px ;
+			}
+			.navbar .navbarContainer .linksContainer ul li a
+			{
+				text-decoration: none ;
+				text-transform: uppercase ;
+				color: #fff ;
+				font-size: 15px;
+				font-weight: bold;
+				/* smooth يكون links علي ال hover عشان لما اعمل  */
+				transition: 0.5s ;
+			}
+			.navbar .navbarContainer .linksContainer ul li a.active
+			{
+				color: chartreuse ;
+			}
+			.navbar .navbarContainer .linksContainer ul li a:hover
+			{
+				color: chartreuse ;
+			}
+			/* ******************************************** menubar icon ************************************** */
+			.inputClass
+			{
+				position: absolute;
+				top:25px; 
+				right: 0px ;	
+				display: none;
+			}
+			.menubarIcon 
+			{
+				position: absolute;
+				top:25px; 
+				right: 15px ;
+			/*	border: 2px solid #ff0;*/
+				cursor: pointer;
+				/* from  "0px" to "970px" في الشاشات المحمول  */
+				display: none ;
+			}
+			.menubarIcon span
+			{
+				display: block; 
+				margin: 6px;
+				width: 30px;
+				height: 2px;
+				padding: 1px;
+				background-color: #fff ;
+				/* smooth يحصل التحول بشكل x الي علامة ال menubar icon عشان لما يحصل تحويل لل */
+				transition: 0.4s ;
+			}
+			/*  x الي علامة ال menubar icon عشان لما اضغط علي الايقونة يتم تحويل لل */
+			/* ------------- when click on inputField or menubar : first span of menu icon will rotate and translate ------------ */
+			.inputClass:checked ~ label .menubarSpan1
+			{
+				transform: rotate(-45deg) translate(-8px, 6px) ;
+			}
+			/* ------------- when click on inputField or menubar : second span of menu icon will disappear ------------ */
+			.inputClass:checked ~ label .menubarSpan2
+			{
+				opacity: 0 ;
+			}
+			/* ------------- when click on inputField or menubar : third span of menu icon will rotate and translate ------------ */
+			.inputClass:checked ~ label .menubarSpan3
+			{
+				transform: rotate(45deg) translate(-8px, -6px) ;
+			}
+			/* في صف لوحده <li> , logo هيظهرهم وهيظهر كل menubar button هيكونوا مخفين ولما اضغط علي ال navbar and logo ال */
+			.navbar .navbarContainer .inputClass:checked  ~  .linksContainer  ,
+			.navbar .navbarContainer .inputClass:checked  ~  .logoContainer  
+			{
+				/* when click on menubar icon , navbar links will appear */
+				display: block;
+			} 
+			/* ################################ Responsive ################################ */
+			@media(min-width:0px) and (max-width:970px)
+			{
+				.navbar  .navbarContainer .menubarIcon  
+				{
+					display: block;
+				}
+				.navbar  .navbarContainer  .linksContainer   ,
+				.navbar  .navbarContainer  .logoContainer             
+				{
+					display: block;
+					width: 100%;
+					float: none;
+				}	
+				.navbar .navbarContainer  .linksContainer 
+				{
+					width: 100%;
+					padding: 0 ;
+					/* when click on menubar icon , navbar links will appear */
+					display: none;
+				}
+				.navbar  .navbarContainer  .linksContainer 
+				{
+					text-align: center;
+					margin-bottom: 25px;
+				}
+				/* هياخذ الصف الثالث كله right <li> هياخذ الصف كله و كل logo هتاخذ الصف كله وال left <li> كل */
+				.navbar  .navbarContainer  .linksContainer  li 
+				{
+					width: 100%;
+					padding-top: 10px;
+					padding-bottom: 10px;
+				}   
+			}		
+		
+		</style>
+	</head>
+	<body>
+		<!-- ******************************* navbar section ************************* -->
+		<div class="navbar">
+			<div class="navbarContainer">
+				<!-- ************** logo container ************** -->
+				<div class="logoContainer">
+					<h2><a href="#">steve</a></h2>
+				</div>
+				<!-- ******************** menubar icon ******************** -->
+				<input type="checkbox" id="inputId" class="inputClass">
+				<label class="menubarIcon" for="inputId">
+					<span class="menubarSpan1"></span>
+					<span class="menubarSpan2"></span>
+					<span class="menubarSpan3"></span>
+				</label>
+				<!-- ************** links container ************** -->
+				<div class="linksContainer">
+					<ul>
+						<li><a href="#" class="active">home</a></li>
+						<li><a href="#aboutId">about</a></li>
+						<li><a href="#">resume</a></li>
+						<li><a href="#">services</a></li>
+						<li><a href="#mySkillsId">skills</a></li>
+						<li><a href="#myAchievementsId">projects</a></li>
+						<li><a href="#">blog</a></li>
+						<li><a href="#contactUsId">contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

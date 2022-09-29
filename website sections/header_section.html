@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="vendors/font-awesome.min.css">
+		<style>
+			body
+			{
+				margin: 0 ;
+				padding: 0 ;
+				font-family: sans-serif ;
+			}
+			/* ****************************************** header section ****************************************** */
+			.header
+			{
+				width: 100%;
+				height: auto;
+				overflow: hidden ;
+				color: #fff;
+			/*	border: 3px solid #ff0; */
+				background-color: #000;
+				padding-bottom: 80px; 
+				box-sizing: border-box;
+			}
+			.header .headerContainer
+			{
+				width: 90% ;
+				height: auto;
+				overflow: hidden ;
+			/*	border: 3px solid #0ff;*/
+				margin: 20px auto ;
+			}
+			.header .headerContainer .headerInfo ,
+			.header .headerContainer .headerImg
+			{
+				width: 49%;
+				float: left ;
+				height: auto ;
+				overflow: hidden ;
+				margin-left: 1%;
+				box-sizing: border-box;
+				margin-top: 50px;
+			}
+			/* *********** header left part : header info *********** */
+			.header .headerContainer .headerInfo
+			{
+			/*	border: 5px solid #ff0;*/
+			}
+			/* *********** header right part : header image *********** */
+			.header .headerContainer .headerImg
+			{
+			/*	border: 5px solid #f0f;*/
+				text-align: center ;
+			}
+			.header .headerContainer .headerImg img
+			{
+				width: 500px;
+				height: 450px;
+			}
+			/* ------------ common properities of the header two button "hire me" , "my works" buttons ------------- */
+			.header .headerContainer .headerInfo .hireBtnClass ,
+			.header .headerContainer .headerInfo .workBtnClass
+
+			{
+				width: 130px;
+				height: 48px;
+				padding: 15px;
+				font-size: 14px;
+				border: 0 ;
+				outline: 0 ;
+				cursor: pointer ;
+				border-radius: 25px;
+				text-transform: uppercase ;
+				font-weight: bold ;
+				letter-spacing: 2px;
+				margin-top: 30px ;
+				margin-right: 20px ;
+			}
+			/* ----------------------- first button of header section ----------------------- */
+			.header .headerContainer .headerInfo .hireBtnClass 
+			{
+				background-color: chartreuse ;
+				color: #000;
+			}
+			/* ----------------------- second button of header section ----------------------- */
+			.header .headerContainer .headerInfo .workBtnClass
+			{
+				background-color: transparent;
+				color: #fff;
+				border: 1px solid #fff;
+			}
+
+			/* first <p> of <h2> of header section */
+			.header .headerContainer .headerInfo #headerPara1Id
+			{
+				color: forestgreen ;
+				text-transform: uppercase;
+				font-size: 30px;
+			}
+			/* second <p> of <h2> of header section */
+			.header .headerContainer .headerInfo #headerPara2Id
+			{	
+				color: #fff ;
+				text-transform: uppercase;
+				font-size: 20px;
+				font-weight: bold;
+			}
+
+			/* two <span> of <h2> of header section */
+			.header .headerContainer .headerInfo #headerH2Span1Id ,
+			.header .headerContainer .headerInfo #headerH2Span2Id
+			{
+				text-transform: capitalize;
+				font-size: 55px;
+			}
+			/* first <span> of <h2> of header section */
+			.header .headerContainer .headerInfo #headerH2Span1Id
+			{
+				color: #fff;
+			}
+			/* second <span> of <h2> of header section */
+			.header .headerContainer .headerInfo #headerH2Span2Id
+			{
+				color: chartreuse;
+			}
+
+
+			/* ################################ Responsive ################################ */
+			@media(min-width:0px) and (max-width:849px)
+			{
+				/* ----------------- left and right part of header --------------- */
+				.header .headerContainer .headerInfo
+				{
+					text-align: center;
+				}
+				.header .headerContainer .headerInfo #headerH2Span1Id ,
+				.header .headerContainer .headerInfo #headerH2Span2Id
+				{
+					font-size: 45px;
+				}
+				.header .headerContainer .headerInfo ,
+				.header .headerContainer .headerImg
+				{
+					float: none ;
+					width: 100% ;
+				}
+			}
+			@media(min-width:850px) and (max-width:1145px)
+			{
+				/* ----------------- "hello" paragraph of header --------------- */
+				.header .headerContainer .headerInfo #headerPara1Id
+				{
+					font-size: 30px;	
+				}
+				/* ----------------- "I'm" , "Steve Williams."  paragraph of header --------------- */
+				.header .headerContainer .headerInfo #headerH2Span1Id ,
+				.header .headerContainer .headerInfo #headerH2Span2Id
+				{
+					font-size: 40px;
+				}
+			}
+
+		</style>
+	</head>
+	<body>	
+		<!-- ****************************************** header section ****************************************** -->
+		<div class="header" id="headerId">
+			<div class="headerContainer">
+				<!-- *********** header left part : header info *********** -->
+				<div class="headerInfo">
+					<p id="headerPara1Id">hello!</p>
+					<h2><span id="headerH2Span1Id"></span> <span id="headerH2Span2Id"></span></h2>
+					<p id="headerPara2Id"></p>
+					<button class="hireBtnClass">hire me</button>
+					<button class="workBtnClass">my works</button>
+				</div>
+				<!-- *********** header right part : header image *********** -->
+				<div class="headerImg">
+					<img src="images/headerImg1.jpg" alt="image not found">
+				</div>
+			</div>
+		</div>
+		<script>
+			// ###################################  my header section : type writer ###############################
+				/* first <span> of <h2> of header section */
+			var headerH2Span1Var = document.getElementById("headerH2Span1Id") ,
+				/* second <span> of <h2> of header section */
+				headerH2Span2Var = document.getElementById("headerH2Span2Id") ,
+				/* second <p> of <h2> of header section */
+				headerPara2Var = document.getElementById("headerPara2Id"),
+				headerH2Span1String="i'm" ,
+				headerH2Span2String ="steve williams." ,
+				headerPara2String = "a freelance web designer" ;
+				// " I'm " counter
+			var count1Var=0 ,
+				// " Steve Williams. " counter
+				count2Var=0 ,
+				// " A FREELANCE WEB DESIGNER " counter
+				count3Var=0 ;
+			/* -------------- when page load , header information will be written using "type writer" --------------- */
+			window.onload =function()
+			{
+
+				var headerH2Span1VarInterval =  setInterval( h1Span1Func, 200)  ,
+					headerH2Span2VarInterval =  setInterval( h1Span2Func, 250)  ,
+					headerH2ParaVarInterval  =  setInterval( h1Para2Func, 300) ;		
+
+			}		
+			/* first <span> of <h2> of header section */
+			function h1Span1Func()
+			{
+				if( count1Var < headerH2Span1String.length )
+				{
+					headerH2Span1Var.innerHTML += headerH2Span1String[count1Var];
+					count1Var++ ;
+				}
+			}
+			/* second <span> of <h2> of header section */
+			function h1Span2Func()
+			{
+			/* first string عدد حروفة بيساوي عدد حروف ال span 1 فالو محتوي ال "I'm" الا بعد ما يكتب الكلمة الاولي "Steve Williams." مش هيبدا يكتب الكلمة الثانية 
+				"Steve Williams." فهيبدا يكتب الكلمة الثانية
+			*/
+				if( headerH2Span1Var.textContent.length >= headerH2Span1String.length )
+				{
+					if( count2Var < headerH2Span2String.length )
+					{
+						headerH2Span2Var.innerHTML += headerH2Span2String[count2Var];
+						count2Var++ ;
+					}
+				}
+			}
+			/* first <p> of <h2> of header section */
+			function h1Para2Func()
+			{
+				/* "Steve Williams." الا بعد ما يكتب الكلمة الثانية "A FREELANCE WEB DESIGNER" مش هيبدا يكتب الكلمة الثالثة  */
+				/* first string عدد حروفة بيساوي عدد حروف ال span 1 فالو محتوي ال "I'm" الا بعد ما يكتب الكلمة الاولي "A FREELANCE WEB DESIGNER." مش هيبدا يكتب الكلمة الثالثة 
+					"Steve Williams." فهيبدا يكتب الكلمة الثانية
+				*/
+				if( headerH2Span2Var.textContent.length >= headerH2Span2String.length )
+				{
+					if( count3Var < headerPara2String.length )
+					{
+						headerPara2Var.innerHTML += headerPara2String[count3Var];
+						count3Var++ ;
+					}
+				}
+			}
+
+		</script>
+	</body>
+</html>
+		

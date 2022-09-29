@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="vendors/font-awesome.min.css">
+		<style>
+			body
+			{
+				margin: 0 ;
+				padding: 0 ;
+				font-family: sans-serif ;
+			}
+			/* ****************************** contact us section *********************************************** */
+			.contactUs
+			{
+				width: 100%;
+				height: auto;
+				overflow: hidden ;
+			/*	border: 3px solid #f00; */
+				background-color: #ccc;
+				box-sizing: border-box ;
+				padding-top: 25px; 
+				padding-bottom: 25px; 
+				background-color: #000;
+			}
+			.contactUs  .contactUsContainer
+			{
+				width: 90% ;
+				height: auto;
+				overflow: hidden ;
+			/*	border: 3px solid #0ff; */
+				margin: 10px auto ;
+			}
+			.contactUs  .contactUsContainer h2 
+			{
+				font-size: 50px ;
+				margin-top:  20px ;
+				margin-bottom:  40px ;
+			}
+			.contactUs  .contactUsContainer .contactUsHeadPara
+			{
+				margin-bottom: 80px;
+			}
+			.contactUs  .contactUsContainer h2 ,
+			.contactUs  .contactUsContainer .contactUsHeadPara
+			{
+				text-align: center; 
+				text-transform: capitalize ;
+				color: #fff;
+			}
+			/* ################ left part : contact us information ################ */
+			.contactUs  .contactUsContainer .leftContactUsPart ,
+			.contactUs  .contactUsContainer .rightContactUsPart 
+			{
+				float: left ; 
+				width: 48%;
+				height: auto;
+				overflow: hidden ;
+				margin-left: 1% ;
+				margin-right: 1% ;
+			/*	border: 3px solid #f0f; */
+				box-sizing: border-box;
+			}
+			.contactUs  .contactUsContainer .leftContactUsPart h3
+			{
+				text-transform: capitalize ;
+				color: #fff;
+				font-size: 30px;
+				margin: 0 ;	
+			}
+			.contactUs  .contactUsContainer .leftContactUsPart p
+			{
+				color: #fff;
+				line-height: 1.5 ;
+			}
+			/* ------------- envelope and phone box container ------------------ */
+			.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo
+			{
+				/*	border: 3px solid #ff0; */
+			}
+			/* ------------ envelope  box [ icon and icon information] , phone box [ icon and icon information] ------------ */
+			.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .messageContainer , 
+			.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .phoneContainer 
+			{
+				width: 100%;
+				box-sizing: border-box;
+				margin-top: 30px ;
+				margin-bottom: 30px ;
+			}
+			/* ------------ envelope  box container [ icon and icon information] == first row ------------ */
+			.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .messageContainer 
+			{
+			/*	border: 3px solid #0f0; */
+			}
+			/* ------------ phone  box container [ icon and icon information] == second row ------------ */
+			.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .phoneContainer 
+			{
+			/*	border: 3px solid #00f; 	*/
+			}
+			/* envelope [ icon and icon information] && phone [ icon and icon information] عشان الايقونة والمعلومات تيجي جنب بعض علي نفس السطر */
+			.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .messageContainer .messageIcon ,
+			.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .messageContainer .messageIconSpan
+			{
+				display: inline-block;
+			}
+			/* envelope icon information && phone icon information عشان سطرين المعلومات يجوا تحت بعض علي  مش في نفس السطر */
+	.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .messageContainer .messageIconSpan span ,
+	.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .phoneContainer .phoneIconSpan     span
+			{
+				display: block;
+				margin-left: 10px;
+				color: #fff;
+				font-weight: bold ;
+				line-height: 1.2 ;
+			}
+			/* -------------------- envelope icon , phone icon الايقونات -------------------- */
+			.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .messageContainer .messageIcon i ,
+			.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .phoneContainer .phoneIcon  i
+			{
+				font-size: 45px;
+				color : #fff ;
+				border: 0 ;
+				color: chartreuse;
+			}
+			/*  icon and icon information [ envelope , phone ] عشان الايقونة والمعلومات الخاصة به يكونوا جنب بعض  */
+			.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .phoneContainer .phoneIcon 	,
+			.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .phoneContainer .phoneIconSpan
+			{
+				display: inline-block;
+				margin-top:15px;
+			}
+			/* ------------------ left part contact us icons  : facebook , twitter , youtube , github ------------------------- */
+			.contactUs  .contactUsContainer .leftContactUsPart .contactUsICons
+			{
+			/*	border: 2px solid #00f;*/
+				margin-top: 30px ;
+				margin-bottom: 30px ;
+			}
+			.contactUs  .contactUsContainer .leftContactUsPart .contactUsICons ul
+			{
+				list-style: none ;
+				margin: 0 ;
+				padding: 0; 
+			}
+			.contactUs  .contactUsContainer .leftContactUsPart .contactUsICons ul li
+			{
+				display: inline-block; 
+				background-color: #222;
+				padding: 10px;
+				border-radius: 50% ;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				margin-right: 20px;
+			}
+			.contactUs  .contactUsContainer .leftContactUsPart .contactUsICons ul li a
+			{
+				color: #fff;
+				text-decoration: none ;
+				padding: 5px;
+			}
+			.contactUs  .contactUsContainer .leftContactUsPart .contactUsICons ul li a i
+			{
+				font-size: 25px;
+			}
+			/* ############################################## right part : contact us form #####################################  */
+			.contactUs  .contactUsContainer  .rightContactUsPart
+			{
+			/*	border: 2px solid #000;*/
+			}
+			.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=text ] ,
+			.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=email ]
+			{
+				width: 45%;
+				height:25px;
+				padding: 2%;
+				margin-top: 15px;
+				margin-bottom: 15px;
+				border-radius: 20px;
+				border: 0 ;
+				outline: 0 ;
+				background-color: #222;
+				font-size: 15px;
+				color: #fff;
+			}
+			.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=text ] 
+			{
+				float: left ;
+				/* padding-left = 2% , padding-right = 2% , margin-right: 1% --> width = 45 + 2 + 2 + 1 = 50%  */
+				margin-right: 1% ;
+			}
+			.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=email ]
+			{
+				float: right;
+				/* padding-left = 2% , padding-right = 2% , margin-right: 1% --> width = 45 + 2 + 2 + 1 = 50%  */
+				margin-left: 1% ;
+			}
+			.contactUs  .contactUsContainer  .rightContactUsPart form input#subjectId  
+			{
+				display: block;
+				/* padding-left = 2% , padding-right = 2% , margin-right: 1% --> width = 95 + 2 + 2 + 1 = 100%  */
+				width: 95.9%;
+				margin-bottom: 20px;
+			}
+			/* -------------------- "textarea" inputField : form -------------------- */
+			.contactUs  .contactUsContainer  .rightContactUsPart form textarea 
+			{
+				display: block;
+				width: 96%;
+				border-radius: 20px;
+				background-color: #222;
+				padding: 2%;
+				padding-top: 4% ;
+				font-size: 15px;
+				color: #fff;
+				border: 0 ;
+				outline: 0 ;
+			}
+			/* ######################### give style to placeholder of inputFileds of form ########################## */
+			.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=text ]::-webkit-input-placeholder ,
+			.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=email]::-webkit-input-placeholder ,
+			.contactUs  .contactUsContainer  .rightContactUsPart form textarea::-webkit-input-placeholder
+			{
+				text-transform: uppercase;
+				color: #999;
+				font-size: 15px;
+			}
+			/* -------------------- "send message" button : form -------------------- */
+			.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=submit ]
+			{
+				padding: 18px;
+				margin-top: 20px;
+				margin-bottom: 10px;
+				border-radius: 20px;
+				text-transform: uppercase ;
+				border: 0 ;
+				outline:  0 ;
+				cursor: pointer ;
+				background-color: chartreuse ;
+				font-weight: bold;
+				letter-spacing: 2px ;
+			}
+			/* ################################ Responsive ################################ */
+			@media(min-width:0px) and (max-width:877px)
+			{
+				.contactUs  .contactUsContainer .leftContactUsPart   ,
+				.contactUs  .contactUsContainer  .rightContactUsPart
+				{
+					display: block ;
+					width: 99% ;
+					float: none ;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- ************************************** contact us section ************************************************** -->
+		<div class="contactUs" id="contactUsId">
+			<div class="contactUsContainer">
+				<!--  ***************************** contact us header ***************************** -->
+				<h2>get in touch</h2>
+				<p class="contactUsHeadPara">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum maiores, molestias ea reprehenderit, aliquam dignissimos. Laboriosam eius repellat blanditiis vel sint
+				</p>
+				<!-- ***************************** contact us body ***************************** -->
+				<!-- ################ left part : contact us information ################ -->
+				<div class="leftContactUsPart">
+					<h3>feel free to ask us!</h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum maiores, molestias ea reprehender
+					</p>
+					<!-- envelope and phone box container	-->
+					<div class="leftContactUsPartInfo">
+					<!-- envelope  box	-->
+						<div class="messageContainer">
+							<!-- left part : message box	-->
+							<div class="messageIcon">
+								<i class="fa fa-envelope"></i>
+							</div>
+							<!-- right part : message box	-->
+							<div class="messageIconSpan">
+								<span class="mailMe">mail me</span>
+								<span class="emailVal">steve@gmail.com</span>
+							</div>
+						</div>
+					<!-- phone box	-->
+						<div class="phoneContainer">
+							<!-- left part : phone box	-->
+							<div class="phoneIcon">
+								<i class="fa fa-phone-square"></i>
+							</div>
+							<!-- right part : phone box	-->
+							<div class="phoneIconSpan">
+								<span class="callMe">call me</span>
+								<span class="callMeVal">+02 2382 388 0002</span>
+							</div>
+						</div>
+					</div>
+					<!-- left part contact us icons -->
+					<div class="contactUsICons">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+							<li><a href="#"><i class="fa fa-github"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- ################ right part : contact us form ################ -->
+				<div class="rightContactUsPart">
+					<form>
+						<input type="text" id="usernameId" 	name="usernameName" placeholder="your name">
+						<input type="email" id="emailId" 	name="emailName" 	placeholder="your email">
+						<input type="text" id="subjectId" 	name="subjectName" 	placeholder="your subject">
+						<textarea id="textAreaId" rows="8" 	placeholder="Enter Message" ></textarea>
+						<input type="submit" id="submitBtnId" class="submitBtnClass" value="send message">
+					</form>
+				</div>
+			</div>
+		</div>
+		<script>
+			/* ****************************************** contact us section *************************************** */
+			var userNameContactForm = document.getElementById("usernameId")  ,
+				emailcontactForm 	= document.getElementById("emailId")	 ,
+				subjectContactForm 	= document.getElementById("subjectId") 	 ,
+				textAreaContactForm = document.getElementById("textAreaId")	 ;
+			/* ############################## username inputField ############################################ */
+			/*  placeholder  يرجع يحط ال inputField ولما اشيل الفارة من علي اي  placeholder يحذف ال inputField عايز لما احط الارة علي اي  */
+			// ------------------- when focus on "username inputField" , placeholder will be removed ------------------
+			userNameContactForm.onfocus = function()
+			{
+				userNameContactForm.setAttribute("placeholder","");
+			}
+			// ------------------ when blur from "username inputField" , return the placeholder again -----------------
+			userNameContactForm.onblur = function()
+			{
+				userNameContactForm.setAttribute("placeholder","Your Name");
+			}
+			/* ################################# email inputField ############################################ */
+			/*  placeholder  يرجع يحط ال inputField ولما اشيل الفارة من علي اي  placeholder يحذف ال inputField عايز لما احط الارة علي اي  */
+			// ------------------- when focus on "email inputField"  , placeholder will be removed -------------------
+			emailcontactForm.onfocus = function()
+			{
+				emailcontactForm.setAttribute("placeholder","");
+			}
+			// ------------------ when blur from "email inputField" , return the placeholder again ------------------
+			emailcontactForm.onblur = function()
+			{
+				emailcontactForm.setAttribute("placeholder","Your Email");
+			}
+			/* ############################################# subject inputField ############################################ */
+			/*  placeholder  يرجع يحط ال inputField ولما اشيل الفارة من علي اي  placeholder يحذف ال inputField عايز لما احط الارة علي اي  */
+			// ------------------- when focus on "subject inputField"  , placeholder will be removed -----------------
+			subjectContactForm.onfocus = function()
+			{
+				subjectContactForm.setAttribute("placeholder","");
+			}
+			// ------------------ when blur from "subject inputField" , return the placeholder again ------------------
+			subjectContactForm.onblur = function()
+			{
+				subjectContactForm.setAttribute("placeholder","Your Subject");
+			}
+			/* ################################### textAreaContactForm inputField ######################################## */
+			/*  placeholder  يرجع يحط ال inputField ولما اشيل الفارة من علي اي  placeholder يحذف ال inputField عايز لما احط الارة علي اي  */
+			// -------------- when focus on "textArea inputField"  , placeholder will be removed ---------------------
+			textAreaContactForm.onfocus = function()
+			{
+				textAreaContactForm.setAttribute("placeholder","");
+			}
+			// ------------------ when blur from "textArea inputField" , return the placeholder again ------------------------------
+			textAreaContactForm.onblur = function()
+			{
+				textAreaContactForm.setAttribute("placeholder","Enter Message");
+			}		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="vendors/font-awesome.min.css">
+		<style>
+			body
+			{
+				margin: 0 ;
+				padding: 0 ;
+				font-family: sans-serif ;
+			}
+			
+			/* **************************************** resume  *************************************************** */ 
+			.resume
+			{
+				width: 100%;
+				height: auto;
+				/* عشان الابناء او المحتوي ميخرجش بره الاب بتاعه  */
+				overflow: hidden ;
+			/*	border: 3px solid #f00; */
+				box-sizing: border-box ;
+				padding-top: 25px; 
+				padding-bottom: 25px; 
+				background-color: #000;
+			}
+			/* ------------------- our projects container ------------------- */
+			.resume .resumeContainer
+			{
+				width: 90% ;
+				height: auto;
+				/* عشان الابناء او المحتوي ميخرجش بره الاب بتاعه  */
+				overflow: hidden ;
+			/*	border: 3px solid #0ff; */
+				margin: 10px auto ;
+			}
+			/* ------------------- our projects header : h2 ------------------- */
+			.resume  .resumeContainer h2 
+			{
+				font-size: 50px ;
+				margin-top:  20px ;
+				margin-bottom:  40px ;
+			}
+			/* ------------------- our projects header : p ------------------- */
+			.resume  .resumeContainer .resumeHeadPara
+			{
+				margin-bottom: 80px;
+			}
+			/* ------------------- common properities between  h2 , p  ------------------- */
+			.resume  .resumeContainer h2  ,
+			.resume  .resumeContainer .resumeHeadPara
+			{
+				text-align: center; 
+				text-transform: capitalize ;
+				color: #fff;
+			}
+			/* -------------------  common properities of each box of 6 boxes ------------------- */
+			.resume  .resumeContainer  .resumeContainerBox
+			{
+			/*	border: 2px solid #00f;*/
+				box-sizing: border-box; 
+				width: 48% ;
+				height: auto ;
+				overflow: hidden ;
+				float: left ;
+				margin: 1% ;
+			}
+			/* ---------- common properities : left part [ icon and vertical line ] && right part [ info resume box ] ------------ */
+			.resume  .resumeContainer  .resumeContainerBox .resumeBoxIconLineContainer ,
+			.resume  .resumeContainer  .resumeContainerBox .resumeBoxInfoContainer
+			{
+			/*	border: 2px solid #fff;*/
+				float: left;
+			}
+			/* ++++++++++++++++++++ left part [ icon and vertical line ] ++++++++++++++++++++ */
+			.resume  .resumeContainer  .resumeContainerBox .resumeBoxIconLineContainer ,
+			{
+				width: 20%;	
+			}
+			/* ######### left part : icon  ######### */
+			.resume  .resumeContainer  .resumeContainerBox .resumeBoxIconLineContainer i
+			{
+				font-size: 18px;
+				background-color: chartreuse ;
+				color: #fff ;
+				border-radius: 50% ;
+				padding: 15px ;
+			}
+			/* ######### left part : line  ######### */
+			.resume  .resumeContainer  .resumeContainerBox .resumeBoxIconLineContainer .resumeLine
+			{
+				display: block;
+				width: 0.5px;
+				height: 90px;
+				padding: 1px ;
+				background-color: #555;
+				color: #fff;
+				margin-left: 25px;
+			}
+			/* ++++++++++++++++++++++++++++++++ right part : info resume box ++++++++++++++++++++++++++ */
+			.resume  .resumeContainer  .resumeContainerBox .resumeBoxInfoContainer
+			{
+			/*	border: 2px solid #f00;*/
+				width: 80%;
+				height: auto ;
+				overflow: hidden ;
+			}
+			/* right part : info resume box :  date of box  */
+			.resume  .resumeContainer  .resumeContainerBox .resumeBoxInfoContainer .resumeDateBox
+			{
+				display: block ;
+				width: 110px;	
+				margin-left: 15px ;
+				margin-bottom: 10px ;
+				padding: 10px; 
+				background-color: #333;
+				color: #fff;
+				text-align: center;
+				font-size: 13px;
+				font-weight: bold;
+			/*	border: 2px solid #f0f;*/
+				border-radius: 20px;
+				text-transform: uppercase ;
+			}
+			/* right part : info resume box : header */
+			.resume  .resumeContainer  .resumeContainerBox .resumeBoxInfoContainer .resumeHeadBox
+			{
+				text-transform: uppercase ;
+				color: #fff;
+				font-size: 18px; 
+				margin-left: 10px ;
+			}
+			/* right part : info resume box : paragraph */
+			.resume  .resumeContainer  .resumeContainerBox .resumeBoxInfoContainer .paraBox
+			{
+			/*	border: 2px solid #ff0;*/
+				margin-left: 10px ;
+				line-height: 1.5 ;
+				color: #fff ;
+			}
+			/* ############################################# Responsive  ############################################# */
+			/* ************** mobile screen ************** */
+			@media (min-width:0px) and (max-width:851px) 
+			{
+				.resume  .resumeContainer  .resumeContainerBox
+				{
+					box-sizing: border-box; 
+					width: 90% ;
+					float: none;
+					margin: 5% ;
+			/*		border: 2px solid #0f0;*/
+					padding-top: 10px;
+					padding-bottom: 10px;
+				}
+				.resume  .resumeContainer  .resumeContainerBox .resumeBoxInfoContainer
+				{
+			/*		border: 2px solid #f00;*/
+					margin-left: 15px ;
+				}
+			}
+		</style>
+	</head>
+	<body>
+<!-- ****************************************** contact us section ************************************************** -->
+		<!-- ***************************************** resume section ************************************************* -->
+		<div class="resume" id="resumeId">
+			<div class="resumeContainer">
+				<!--  ***************************** services header ***************************** -->
+				<h2>resume</h2>
+				<p class="resumeHeadPara">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum maiores, molestias ea reprehenderit, aliquam dignissimos. Laboriosam eius repellat blanditiis vel sint
+				</p>
+				<!-- ******************** row 1 [ left part ] : resume box 1 ******************** -->
+				<div class="resumeContainerBox">
+					<!-- left part : icon and vertical line -->
+					<div class="resumeBoxIconLineContainer">
+						<i class="fa fa-briefcase"></i>
+						<div class="resumeLine"></div>
+					</div>
+					<!-- right part : info resume box -->
+					<div class="resumeBoxInfoContainer">
+						<div class="resumeDateBox">2018-present</div>
+						<div class="resumeHeadBox">web developer - envato</div>
+						<p class="paraBox">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum 
+						</p>
+					</div>
+				</div>
+				<!-- ******************** row 1 [ right part ]  resume box 2 ******************** -->
+				<div class="resumeContainerBox">
+					<!-- left part : icon and vertical line -->
+					<div class="resumeBoxIconLineContainer">
+						<i class="fa fa-graduation-cap"></i>
+						<div class="resumeLine"></div>
+					</div>
+					<!-- right part : info resume box -->
+					<div class="resumeBoxInfoContainer">
+						<!-- date of box -->
+						<div class="resumeDateBox">2015</div>
+						<!-- header of resume box -->
+						<div class="resumeHeadBox">computer engineering - mit</div>
+						<p class="paraBox">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum 
+						</p>
+					</div>
+				</div>
+				<!-- ******************** row 2 [ left part ] : resume box 3 ******************** -->
+				<!-- ******************** resume box 3 ******************** -->
+				<div class="resumeContainerBox">
+					<!-- left part : icon and vertical line -->
+					<div class="resumeBoxIconLineContainer">
+						<i class="fa fa-briefcase"></i>
+						<div class="resumeLine"></div>
+					</div>
+					<!-- right part : info resume box -->
+					<div class="resumeBoxInfoContainer">
+						<!-- date of box -->
+						<div class="resumeDateBox">2013 - 2018</div>										
+					<div class="resumeHeadBox">ui/ux designer - codeburst</div>
+						<p class="paraBox">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum 
+						</p>
+					</div>
+				</div>
+				<!-- ******************** row 2 [ right part ] : resume box 4 ******************** -->
+				<!-- ******************** resume box 4 ******************** -->
+				<div class="resumeContainerBox">
+					<!-- left part : icon and vertical line -->
+					<div class="resumeBoxIconLineContainer">
+						<i class="fa fa-graduation-cap"></i>
+						<div class="resumeLine"></div>
+					</div>
+					<!-- right part : info resume box -->
+					<div class="resumeBoxInfoContainer">
+						<!-- date of box -->
+						<div class="resumeDateBox">2012</div>
+						<!-- header right part of box -->
+						<div class="resumeHeadBox">masters in it - mit</div>
+						<p class="paraBox">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum 
+						</p>
+					</div>
+				</div>
+				<!-- ******************** row 2 [ left part ] : resume box 5 ******************** -->
+				<!-- ******************** resume box 5 ******************** -->
+				<div class="resumeContainerBox">
+					<!-- left part : icon and vertical line -->
+					<div class="resumeBoxIconLineContainer">
+						<i class="fa fa-briefcase"></i>
+						<div class="resumeLine"></div>
+					</div>
+					<!-- right part : info resume box -->
+					<div class="resumeBoxInfoContainer">
+						<div class="resumeDateBox">2006-2013</div>
+						<div class="resumeHeadBox">consultant - videohive</div>
+						<p class="paraBox">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum 
+						</p>
+					</div>
+				</div>
+				<!-- ******************** resume box 6 ******************** -->
+				<div class="resumeContainerBox">
+					<!-- left part : icon and vertical line -->
+					<div class="resumeBoxIconLineContainer">
+						<i class="fa fa-graduation-cap"></i>
+						<div class="resumeLine"></div>
+					</div>
+					<!-- right part : info resume box -->
+					<div class="resumeBoxInfoContainer">
+						<div class="resumeDateBox">2018-present</div>
+						<div class="resumeHeadBox">web developer - envato</div>
+						<p class="paraBox">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum 
+						</p>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</body>
+</html>

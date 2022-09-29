@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="vendors/font-awesome.min.css">
+		<style>
+			body
+			{
+				margin: 0 ;
+				padding: 0 ;
+			}
+			/* ********************************* Achievements section ******************************************* */
+			/* ++++++++ achievements parent ++++++++  */
+			.myAchievements 
+			{
+				display: block ;
+				width: 100%;
+				height: auto;
+				overflow: hidden ;
+				color: #fff;
+			/*	border: 3px solid #f00;*/
+				background-color: #000;
+				text-align: center;
+				padding-top: 50px; 
+				padding-bottom: 25px; 
+			}
+			/* ++++++++ achievements container ++++++++ */
+			.myAchievements .myAchievementsContainer 
+			{
+				width: 80% ;
+				height: auto;
+				overflow: hidden ;
+				/*	border: 3px solid #0ff; */
+				margin: 20px auto ;
+			}
+			/* ------------ achievements h2 -------------- */
+			.myAchievements  h2 
+			{
+				font-size: 45px;
+				text-transform: capitalize;
+			}
+			/* ------------ achievements boxes -------------- */
+			.myAchievements .myAchievementsContainer .box
+			{
+				float: left ;
+				width: 31.3333% ;
+				padding-left: 1% ;
+				padding-right: 1% ;
+			}
+			/* --------------- first paragraph --------------- */
+			.myAchievements .myAchievementsContainer .box  p:nth-of-type(1)
+			{
+				font-size: 38px;
+			}
+			/* --------------- second paragraph --------------- */
+			.myAchievements .myAchievementsContainer .box  p:nth-of-type(2)
+			{
+				font-size: 18px;
+				line-height: 1.5 ;
+			}
+			/* ################################ Responsive ################################ */
+			@media(min-width:0px) and (max-width:700px)
+			{
+				.myAchievements .myAchievementsContainer .box
+				{
+					width: 100% ;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- ******************************************* Achievements section *********************************** -->
+		<div class="myAchievements" id="myAchievementsId">
+			<h2>our achievements</h2>
+			<div class="myAchievementsContainer">
+				<!-- ************ box 1 ************ -->
+				<div class="box">
+					<p class="counterPara1Class" id="counterPara1Id">+100</p>
+					<p>Customers are satisfied with our professional support</p>
+				</div>
+				<!-- ************ box 2 ************ -->
+				<div class="box">
+					<p class="counterPara2Class" id="counterPara2Id">+1000</p>
+					<p>Amazing preset options to be mixed and combined</p>
+				</div>
+				<!-- ************ box 3 ************ -->
+				<div class="box">
+					<p class="counterPara3Class" id="counterPara3Id">+2000</p>
+					<p>Average response time on live chat support channel</p>
+				</div>			
+			</div>
+		</div>
+		
+		<script>
+			// we reach the "Our Achievements section" , it will call "callNumScroller" function to increase numbers
+				// 50 milli-second كل  increase1Func هيتم النداء علي الدالة
+			var a = setInterval( increase1Func , 10 )  ,
+				// 100 milli-second كل  increase2Func هيتم النداء علي الدالة
+				b = setInterval( increase2Func , 20 ) ,
+				// 150 milli-second كل  increase3Func هيتم النداء علي الدالة
+				c = setInterval( increase3Func , 30 ) ;
+				// ################################## Our Achievements section : number scroller #####################################
+			var x1 = document.getElementById("counterPara1Id") ,
+				x2 = document.getElementById("counterPara2Id") ,
+				x3 = document.getElementById("counterPara3Id") ,
+				para1Val = x1.innerHTML  ,
+				para2Val = x2.innerHTML  ,
+				para3Val = x3.innerHTML  ;
+				// counter of first achievement from +100 to +1000
+			var i=101 ,
+				// counter of second achievement from +2000 to +3000
+				j=2001 ,
+				// counter of third achievement from +3000 to +4000
+				k=3001 ;
+			// هذه الدالة كل 50 ملي ثانية بتزود 1 علي الرقم 100 حتي الوصول للقيمة 1000 فيتم التوقف عن النداء علي هذه الدالة
+			function increase1Func()
+			{
+				if(  i <= 1000 )
+				{
+					x1.innerHTML = "+"+i ;
+				}
+				i++ ;
+			}
+			// هذه الدالة كل 100 ملي ثانية بتزود 1 علي الرقم 1000 حتي الوصول للقيمة 3000 فيتم التوقف عن النداء علي هذه الدالة
+			function increase2Func()
+			{
+				if(  j <= 3000 )
+				{
+					x2.innerHTML = "+"+j ;
+				}
+				j++ ;
+			}
+			// هذه الدالة كل 150 ملي ثانية بتزود 1 علي الرقم 2000 حتي الوصول للقيمة 4000 فيتم التوقف عن النداء علي هذه الدالة
+			function increase3Func()
+			{
+				if(  k <= 4000 )
+				{
+					x3.innerHTML = "+"+k ;
+				}
+				k++ ;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="vendors/font-awesome.min.css">
+		<style>
+			*
+			{
+				padding: 0 ;
+				margin: 0 ;
+				font-family: sans-serif;
+			}
+			/* *********************************** services section ****************************************** */
+			.services
+			{
+				width: 100%;
+				height: auto;
+				overflow: hidden ;
+			/*	border: 3px solid #f00; */
+				background-color: #000;
+				box-sizing: border-box ;
+				padding-top: 25px; 
+				padding-bottom: 25px; 
+				text-align: center ;
+			}
+			/* ****************** services container ******************  */
+			.services  .servicesContainer
+			{
+				width: 90% ;
+				height: auto;
+				overflow: hidden ;
+			/*	border: 3px solid #0ff; */
+				margin: 10px auto ;
+			}
+			/* ************************** service header : h2  **************************  */
+			.services  .servicesContainer  h2
+			{
+				text-transform: capitalize ;
+				font-size: 40px;
+				color: #fff;
+			}
+			/* ************************** service header : p  **************************  */
+			.services  .servicesContainer  p
+			{
+				color: #fff;	
+			}
+			/* ************************** service header : button  **************************  */
+			.services  .servicesContainer  .servicesBtnClass
+			{
+				width: 150px ;
+				height: 50px ;
+				padding: 10px;
+				font-size: 14px;
+				font-weight: bold ;
+				cursor: pointer ;
+				text-transform: uppercase ;
+				border-radius: 20px ;
+				border: 0 ;
+				outline: 0 ;
+				background-color: chartreuse ;
+				letter-spacing: 2px ;
+				margin:  0 ;
+			}
+			/* ***************************** boxes container ***************************** */
+			.services  .servicesContainer .servicseBoxsContainer
+			{
+				width: 100% ;
+				height: auto;
+				overflow: hidden ;
+				margin: 30px auto ;
+			}
+			/* ************************** service 1 **************************  */
+			.services  .servicesContainer .servicseBoxsContainer .servicesBox 
+			{
+				float: left; 
+				/* total_width = width + margin_left + marginright = 31.3333 + 1 + 1 = 33.3333% 	*/
+				width: 31.3333% ;
+				margin: 1% ;
+				padding-top: 30px;
+				padding-bottom: 50px;
+				background-color: #333 ;
+			}
+			/* ****************** service 1 container ******************  */
+			.services  .servicesContainer .servicseBoxsContainer .servicesBox .servicesIcon
+			{
+				/*	border: 3px solid #f0f; */
+			}
+			/* ****************** service  container : icon ******************  */
+			.services  .servicesContainer .servicseBoxsContainer .servicesBox .servicesIcon  i
+			{
+				font-size: 55px;
+				color: chartreuse ;
+			}
+			/* ****************** service  container : h4 ******************  */
+			.services  .servicesContainer .servicseBoxsContainer .servicesBox .servicesIcon  h4
+			{
+				margin-top: 10px ;
+				margin-bottom: 10px ;
+				color: #fff;
+				text-transform: uppercase;
+				font-size: 18px;
+				
+			}
+			/* ****************** service  container : span ******************  */
+			.services  .servicesContainer .servicseBoxsContainer .servicesBox .servicesIcon  span
+			{
+				display: block;
+				width: 50px ;
+				height: 0.5px ;
+				padding: 0.5px;
+				background-color:#0f0;
+				margin: 2px auto; 
+			}
+			/* ########################################### Responsive ######################################## */
+			@media(min-width:0px) and (max-width:600px)
+			{
+				/* ************************** service 1 **************************  */
+				.services  .servicesContainer .servicseBoxsContainer .servicesBox 
+				{
+					float: none ;
+					/* total_width= width + margin_left + marginright = 90 + 5 + 5 = 100% 	*/		
+					width: 90% ;
+					margin: 5% ;
+				}
+			}
+			@media(min-width:601px) and (max-width:900px)
+			{
+				/* ************************** service 1 **************************  */
+				.services  .servicesContainer .servicseBoxsContainer .servicesBox 
+				{
+					/* total_width= width + margin_left + marginright = 48 + 1 + 1 = 50% 	*/
+					width: 48%;
+					margin: 1% ;
+				}
+			}
+		</style>
+	</head>
+	<body>
+<!-- ***************************************** services section ************************************************* -->
+		<div class="services" id="servicesId">
+			<div class="servicesContainer">
+				<!--  ***************************** services header ***************************** -->
+				<h2>services</h2>
+				<p class="servicesHeadPara">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum maiores, molestias ea reprehenderit, aliquam dignissimos. Laboriosam eius repellat blanditiis vel sint
+				</p>
+				
+				<!-- ***************************** services  body : 6 boxes ***************************** -->
+				<div class="servicseBoxsContainer">
+					<!-- ****************** service 1 ****************** -->
+					<div class="servicesBox">
+						<div class="servicesIcon">
+							<i class="fa fa-laptop"></i>
+							<h4>web design</h4>
+							<span></span>
+						</div>
+					</div>
+					<!-- ****************** service 2 ****************** -->
+					<div class="servicesBox">
+						<div class="servicesIcon">
+							<i class="fa fa-camera-retro"></i>
+							<h4>photograph</h4>
+							<span></span>
+						</div>
+					</div>
+					<!-- ****************** service 3 ****************** -->
+					<div class="servicesBox">
+						<div class="servicesIcon">
+							<i class="fa fa-code"></i>
+							<h4>web developer</h4>
+							<span></span>
+						</div>
+					</div>
+					<!-- ****************** service 4 ****************** -->
+					<div class="servicesBox">
+						<div class="servicesIcon">
+							<i class="fa fa-flask"></i>
+							<h4>branding</h4>
+							<span></span>
+						</div>
+					</div>
+					<!-- ****************** service 5 ****************** -->
+					<div class="servicesBox">
+						<div class="servicesIcon">
+							<i class="fa fa-line-chart"></i>
+							<h4>app developing</h4>
+							<span></span>
+						</div>
+					</div>
+					<!-- ****************** service 6 ****************** -->
+					<div class="servicesBox">
+						<div class="servicesIcon">
+							<i class="fa fa-truck"></i>
+							<h4>product strategy</h4>
+							<span></span>
+						</div>
+					</div>
+				</div>
+				<button class="servicesBtnClass" id="servicesBtnId">view more</button>
+			</div>
+		</div>

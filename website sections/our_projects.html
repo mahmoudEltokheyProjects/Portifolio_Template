@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="vendors/font-awesome.min.css">
+		<style>
+			body
+			{
+				margin: 0 ;
+				padding: 0 ;
+				font-family: sans-serif ;
+			}
+			/* **************************************** our projects section *************************************** */
+			.ourProject
+			{
+				width: 100%;
+				height: auto;
+				/* عشان الابناء او المحتوي ميخرجش بره الاب بتاعه  */
+				overflow: hidden ;
+			/*	border: 3px solid #f00; */
+				box-sizing: border-box ;
+				padding-top: 25px; 
+				padding-bottom: 25px; 
+				background-color: #000;
+			}
+			/* ------------------- our projects container ------------------- */
+			.ourProject .ourProjectContainer
+			{
+				width: 90% ;
+				height: auto;
+				/* عشان الابناء او المحتوي ميخرجش بره الاب بتاعه  */
+				overflow: hidden ;
+			/*	border: 3px solid #0ff; */
+				margin: 10px auto ;
+			}
+			/* ------------------- our projects header : h2 ------------------- */
+			.ourProject  .ourProjectContainer h2 
+			{
+				font-size: 50px ;
+				margin-top:  20px ;
+				margin-bottom:  40px ;
+			}
+			/* ------------------- our projects header : p ------------------- */
+			.ourProject  .ourProjectContainer p
+			{
+				margin-bottom: 80px;
+			}
+			/* ------------------- common properities between  h2 , p  ------------------- */
+			.ourProject  .ourProjectContainer h2  ,
+			.ourProject  .ourProjectContainer p
+			{
+				text-align: center; 
+				text-transform: capitalize ;
+				color: #fff;
+			}
+			/* ----------------------- boxes of our projects ----------------------- */
+			.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox1 ,
+			.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox2 ,
+			.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox3 ,
+			.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox4
+			{
+				float: left ;
+				margin: 1% ;
+			}
+			/*  first and fourth box has the same width = 30% الصورة الاولي والرابعة هيكون لها نفس العرض يعني */
+			.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox1 ,
+			.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox4
+			{
+				/* total_width = width + margin_left + margin_right = 28 + 1 + 1 = 30%	*/
+				width: 28% ;
+				height: 450px ;
+				overflow: hidden ;
+			/*	border: 3px solid #f0f; */
+				box-sizing: border-box ;
+			}
+			/*  second and third box has the same width = 70% الصورة الثانية والثالثة  هيكون لها نفس العرض يعني */
+			.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox2 ,
+			.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox3
+			{
+				/* total_width = width + margin_left + margin_right = 68 + 1 + 1 = 70%	*/
+				width: 68% ;
+				height: 450px ;
+				overflow: hidden ;
+			/*	border: 3px solid #ff0; */
+				box-sizing: border-box ;
+			}
+			.ourProject  .ourProjectContainer .ourProjectContainerBoxes  img
+			{
+				width: 100% ;
+				height: 100% ;
+			}
+			/* ############################################# Responsive  ############################################# */
+			/* ************** mobile screen ************** */
+			@media (min-width:0px) and (max-width:775px) 
+			{
+				.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox1 ,
+				.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox2 ,
+				.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox3 ,
+				.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox4
+				{
+				/* total_width = width + margin_left + margin_right = 90 + 5 + 5 = 100%	 */
+					width: 90% ;
+					height: 400px;
+					float: none;
+					margin: 5%  auto;
+				}
+
+			}
+			/* ************** tablet screen ************** */
+			@media (min-width:776px) and (max-width:1000px) 
+			{ 
+				/* total_width = width + margin_left + margin_right = 48 + 1 + 1 = 50%	 */
+				.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox1 ,
+				.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox2 ,
+				.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox3 ,
+				.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox4
+				{
+					/*		*/
+					width: 48% ;
+					float: left;
+					margin: 1%  ;
+				}
+			}
+		</style>
+	</head>
+	<body>
+	<!-- ********************************* our project section ************************************************* -->
+		<div class="ourProject" id="ourProjectId">
+			<div class="ourProjectContainer">
+				<!--  ***************************** our project header ***************************** -->
+				<h2>our project</h2>
+				<p class="ourProjectHeadPara">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam quis earum itaque quisquam veniam culpa id nostrum maiores, molestias ea reprehenderit, aliquam dignissimos. Laboriosam eius repellat blanditiis vel sint
+				</p>
+				<div class="ourProjectContainerBoxes">
+					<div class="ourProjectBox1">
+						<img src="../images/ourProjectsImages/img2.jpg">
+					</div>
+					<div class="ourProjectBox2">
+						<img src="../images/ourProjectsImages/img1.jpeg">
+					</div>
+					<div class="ourProjectBox3">
+						<img src="../images/ourProjectsImages/img3.jpeg">
+					</div>
+					<div class="ourProjectBox4">
+						<img src="../images/ourProjectsImages/img4.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

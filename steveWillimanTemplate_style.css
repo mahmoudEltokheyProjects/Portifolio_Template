@@ -1,0 +1,1618 @@
+*
+{
+	font-family: sans-serif;
+}
+html , body 
+{
+    /*  smooth بشكل  section عشان لما اضغط علي اللينك يتم الانتقال لل */
+	scroll-behavior:smooth ;
+}
+body
+{
+	margin: 0 ;
+	padding: 0 ;
+	height: 1000px;
+}
+/* ************************************************ navbar section ******************************************* */
+.navbar
+{
+/*	position: fixed ;*/
+/*	border: 2px solid #0ff;*/
+	width: 100%;
+	height: auto ;
+	overflow: hidden ;
+	background-color: #333 ;
+	box-sizing: border-box;
+}
+.navbar .navbarContainer
+{
+/*	border: 2px solid #f0f;*/
+	width: 90%;
+	height: auto ;
+	overflow: hidden ;	
+	margin: 0px auto;
+}
+.navbar .navbarContainer .logoContainer  ,
+.navbar .navbarContainer .linksContainer
+{
+	/* width من ضمن ال border , padding عشان لا يتم حساب ال */
+	box-sizing: border-box;
+}
+.navbar .navbarContainer .logoContainer 
+{
+	float: left;
+	width: 20%;
+/*	border: 2px solid #ff0;*/
+}
+.navbar .navbarContainer .logoContainer h2 a
+{
+	text-decoration: none ;
+	text-transform: uppercase ;
+	color: #fff ;
+	font-size: 35px;
+}
+.navbar .navbarContainer .linksContainer
+{
+	width: 80%;
+	float: right;
+	text-align: right;
+/*	border: 2px solid #f00;			*/
+}
+.navbar .navbarContainer .linksContainer ul
+{
+	list-style: none ;
+	padding: 0 ;
+	margin-top: 25px;	
+}
+.navbar .navbarContainer .linksContainer ul li
+{
+	display: inline-block ;
+	margin: 10px ;
+}
+.navbar .navbarContainer .linksContainer ul li a
+{
+	text-decoration: none ;
+	text-transform: uppercase ;
+	color: #fff ;
+	font-size: 15px;
+	font-weight: bold;
+	/* smooth يكون links علي ال hover عشان لما اعمل  */
+	transition: 0.5s ;
+}
+.navbar .navbarContainer .linksContainer ul li a.active
+{
+	color: chartreuse ;
+}
+.navbar .navbarContainer .linksContainer ul li a:hover
+{
+	color: chartreuse ;
+}
+/* ******************************************** menubar icon ************************************** */
+.inputClass
+{
+	position: absolute;
+	top:25px; 
+	right: 0px ;	
+	display: none;
+}
+.menubarIcon 
+{
+	position: absolute;
+	top:25px; 
+	right: 15px ;
+/*	border: 2px solid #ff0;*/
+	cursor: pointer;
+	/* from  "0px" to "970px" في الشاشات المحمول  */
+	display: none ;
+}
+.menubarIcon span
+{
+	display: block; 
+	margin: 6px;
+	width: 30px;
+	height: 2px;
+	padding: 1px;
+	background-color: #fff ;
+	/* smooth يحصل التحول بشكل x الي علامة ال menubar icon عشان لما يحصل تحويل لل */
+	transition: 0.4s ;
+}
+/*  x الي علامة ال menubar icon عشان لما اضغط علي الايقونة يتم تحويل لل */
+/* ------------- when click on inputField or menubar : first span of menu icon will rotate and translate ------------ */
+.inputClass:checked ~ label .menubarSpan1
+{
+	transform: rotate(-45deg) translate(-8px, 6px) ;
+}
+/* ------------- when click on inputField or menubar : second span of menu icon will disappear ------------ */
+.inputClass:checked ~ label .menubarSpan2
+{
+	opacity: 0 ;
+}
+/* ------------- when click on inputField or menubar : third span of menu icon will rotate and translate ------------ */
+.inputClass:checked ~ label .menubarSpan3
+{
+	transform: rotate(45deg) translate(-8px, -6px) ;
+}
+/* في صف لوحده <li> , logo هيظهرهم وهيظهر كل menubar button هيكونوا مخفين ولما اضغط علي ال navbar and logo ال */
+.navbar .navbarContainer .inputClass:checked  ~  .linksContainer  ,
+.navbar .navbarContainer .inputClass:checked  ~  .logoContainer  
+{
+    /* when click on menubar icon , navbar links will appear */
+    display: block;
+} 
+/* ################################ Responsive ################################ */
+@media(min-width:0px) and (max-width:970px)
+{
+	.navbar  .navbarContainer .menubarIcon  
+    {
+        display: block;
+    }
+	.navbar  .navbarContainer  .linksContainer   ,
+    .navbar  .navbarContainer  .logoContainer             
+    {
+	 	display: block;
+        width: 100%;
+        float: none;
+    }	
+    .navbar .navbarContainer  .linksContainer 
+    {
+        width: 100%;
+        padding: 0 ;
+        /* when click on menubar icon , navbar links will appear */
+        display: none ;
+    }
+    .navbar  .navbarContainer  .linksContainer 
+    {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    /* هياخذ الصف الثالث كله right <li> هياخذ الصف كله و كل logo هتاخذ الصف كله وال left <li> كل */
+    .navbar  .navbarContainer  .linksContainer  li 
+    {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }   
+}
+/* ****************************************** button up section ****************************************** */
+.buttonUpClass
+{
+	position: fixed;
+	/*  عشان يظهر فوق اي عنصر حيث في الشاشات الصغيرة هيكون ظاهر في اي عنصر يمر به */
+	z-index: 999 ;
+	bottom: 10px ;
+	right: 5px ;
+	padding: 15px ;
+/*	border: 2px solid #f00;*/
+	background-color: #555 ;
+	color: #fff;
+	border-radius: 50%; 
+	border: 0 ;
+	outline: 0 ;
+	cursor: pointer ;
+	transition: 1s ease-in-out ;
+	/* 	 هيتم اخفاء الزرار وهيتم اظهاره لما انزل مسافة 400 بيكسل بحيث لما اضغط علي هذا الزرار يطلعني لبداية الصفحة */
+	display: none ;
+}
+/* **************************** button up icon  *************************** */
+.buttonUpClass  i
+{
+	font-size: 25px ;
+}
+/* ****************************************** header section ****************************************** */
+.header
+{
+	width: 100%;
+	height: auto;
+	overflow: hidden ;
+	color: #fff;
+/*	border: 3px solid #ff0; */
+	background-color: #000;
+	padding-bottom: 50px; 
+	box-sizing: border-box;
+}
+.header .headerContainer
+{
+	width: 90% ;
+	height: auto;
+	overflow: hidden ;
+/*	border: 3px solid #0ff;*/
+	margin: 20px auto ;
+}
+.header .headerContainer .headerInfo ,
+.header .headerContainer .headerImg
+{
+	width: 49%;
+	float: left ;
+	height: auto ;
+	overflow: hidden ;
+	margin-left: 1%;
+	box-sizing: border-box;
+	margin-top: 50px;
+}
+/* *********** header left part : header info *********** */
+.header .headerContainer .headerInfo
+{
+/*	border: 5px solid #ff0;*/
+}
+/* *********** header right part : header image *********** */
+.header .headerContainer .headerImg
+{
+/*	border: 5px solid #f0f;*/
+	text-align: center ;
+}
+.header .headerContainer .headerImg img
+{
+	width: 500px;
+	height: 450px;
+}
+/* ------------ common properities of the header two button "hire me" , "my works" buttons ------------- */
+.header .headerContainer .headerInfo .hireBtnClass ,
+.header .headerContainer .headerInfo .workBtnClass
+
+{
+	width: 130px;
+	height: 48px;
+	padding: 15px;
+	font-size: 14px;
+	border: 0 ;
+	outline: 0 ;
+	cursor: pointer ;
+	border-radius: 25px;
+	text-transform: uppercase ;
+	font-weight: bold ;
+	letter-spacing: 2px;
+	margin-top: 30px ;
+	margin-right: 20px ;
+}
+/* ----------------------- first button of header section ----------------------- */
+.header .headerContainer .headerInfo .hireBtnClass 
+{
+	background-color: chartreuse ;
+	color: #000;
+}
+/* ----------------------- second button of header section ----------------------- */
+.header .headerContainer .headerInfo .workBtnClass
+{
+	background-color: transparent;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+/* first <p> of <h2> of header section */
+.header .headerContainer .headerInfo #headerPara1Id
+{
+	color: forestgreen ;
+	text-transform: uppercase;
+	font-size: 30px;
+}
+/* second <p> of <h2> of header section */
+.header .headerContainer .headerInfo #headerPara2Id
+{	
+	color: #fff ;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* two <span> of <h2> of header section */
+.header .headerContainer .headerInfo #headerH2Span1Id ,
+.header .headerContainer .headerInfo #headerH2Span2Id
+{
+	text-transform: capitalize;
+	font-size: 55px;
+}
+/* first <span> of <h2> of header section */
+.header .headerContainer .headerInfo #headerH2Span1Id
+{
+	color: #fff;
+}
+/* second <span> of <h2> of header section */
+.header .headerContainer .headerInfo #headerH2Span2Id
+{
+	color: chartreuse;
+}
+
+
+/* ################################ Responsive ################################ */
+@media(min-width:0px) and (max-width:849px)
+{
+	/* ----------------- left and right part of header --------------- */
+	.header .headerContainer .headerInfo
+	{
+		text-align: center;
+	}
+	.header .headerContainer .headerInfo #headerH2Span1Id ,
+	.header .headerContainer .headerInfo #headerH2Span2Id
+	{
+		font-size: 45px;
+	}
+	.header .headerContainer .headerInfo ,
+	.header .headerContainer .headerImg
+	{
+		float: none ;
+		width: 100% ;
+	}
+}
+@media(min-width:850px) and (max-width:1145px)
+{
+	/* ----------------- "hello" paragraph of header --------------- */
+	.header .headerContainer .headerInfo #headerPara1Id
+	{
+		font-size: 30px;	
+	}
+	/* ----------------- "I'm" , "Steve Williams."  paragraph of header --------------- */
+	.header .headerContainer .headerInfo #headerH2Span1Id ,
+	.header .headerContainer .headerInfo #headerH2Span2Id
+	{
+		font-size: 40px;
+	}
+}
+/* ********************************************** about us section *************************************** */
+.about
+{
+
+	display: block ;
+	width: 100%;
+	height: auto;
+	overflow: hidden ;
+	color: #fff;
+/*	border: 3px solid #f00;*/
+	background-color: #000;
+	padding-bottom: 50px; 
+	box-sizing: border-box ;
+	padding-top: 25px; 
+	padding-bottom: 25px; 
+}
+.about .aboutContainer
+{
+	width: 90% ;
+	height: auto;
+	overflow: hidden ;
+/*	border: 3px solid #0ff; */
+	margin: 20px auto ;
+}
+.about .aboutContainer .aboutH2   ,
+.about .aboutContainer .aboutPara
+{
+	text-align: center ;
+	text-transform: capitalize;
+	margin-top: 30px ;
+}
+.about .aboutContainer .aboutH2
+{
+	font-size: 55px;
+	margin-bottom: 30px ;
+}
+.about .aboutContainer  .aboutPara
+{
+	margin-bottom: 70px ;
+	font-size: 16px;	
+}
+.about .aboutContainer .aboutUsImg ,
+.about .aboutContainer .aboutUsInfo
+{
+	width: 48%;
+	float: left;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+.about .aboutContainer .aboutUsInfo .rightPartPara
+{
+	font-size: 14px;
+	line-height: 1.5 ;
+}
+.about .aboutContainer .aboutUsImg
+{
+	text-align: center;
+	margin-top: 50px;
+}
+.about .aboutContainer .aboutUsImg img
+{
+	width:350px;
+	height: 350px;
+	border-radius: 50% ;
+	border: 2px solid #fff; 
+}
+
+.about .aboutContainer .aboutPersonalInfo
+{
+/*	border: 2px solid #0ff; */
+	line-height: 2.2 ;
+}
+.about .aboutContainer .aboutUsInfo .projectNumPara
+{
+/*	clear: both ;*/
+	display: block;
+	margin-top: 60px;
+	margin-bottom: 10px;
+}
+.about .aboutContainer .aboutUsInfo .downloadCvBtn
+{
+	width: 150px;
+	height: 42px;
+	padding: 10px;
+	background-color: chartreuse ;
+	text-transform: uppercase;
+	border: 0 ;
+	outline: 0 ;
+	font-weight: bold;
+	border-radius: 50px;
+	cursor: pointer ;
+}
+/* ----------------- project number paragraph -----------------  */
+.about .aboutContainer .aboutUsInfo .aboutPersonalInfo  .projectNumPara
+{
+	text-transform: capitalize ;
+	font-weight: bold ;
+}
+/* ----------------- project number span number -----------------  */
+.about .aboutContainer .aboutPersonalInfo .projectNumClass
+{
+	color: chartreuse ;
+	font-size: 35px ;
+}
+/* ----------------------------- each box has [ label and span ] -------------------------- */
+.about .aboutContainer  .aboutUsInfo .aboutPersonalInfo .box
+{
+	/*  span و label ياخذ سطر كامل وكل سطر هيظهر فيه  box عشان كل  */
+	clear: both;
+	display: block ;
+	width: 100%;
+	color: #f00;
+}
+/*  ---------------------- left and right part of aboutUs info ---------------------- */
+.about .aboutContainer .aboutPersonalInfo .labelClass ,
+.about .aboutContainer .aboutPersonalInfo .spanClass
+{
+	width: 50% ;
+}
+/*  ---------------------- left  part of aboutUs info ---------------------- */
+.about .aboutContainer .aboutPersonalInfo .labelClass
+{
+	float: left ;
+	color: #fff;
+	font-weight: bold; 
+	text-transform: capitalize ;
+}
+/*  ---------------------- right part of aboutUs info ---------------------- */
+.about .aboutContainer .aboutPersonalInfo .spanClass
+{
+	float: right ; 
+	color: #999;
+}
+/* ################################ Responsive ################################ */
+@media(min-width:0px) and (max-width:877px)
+{
+	.about .aboutContainer .aboutUsImg ,
+	.about .aboutContainer .aboutUsInfo
+	{
+		float: none ;
+		width: 100% ;
+			margin-bottom: 50px;
+
+	}
+	.about .aboutContainer  .aboutPara
+	{
+		font-size: 16px;	
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-bottom:50px;
+	}
+	
+	.about .aboutContainer .aboutUsInfo .rightPartPara
+	{
+		text-align: center;
+		margin-bottom: 50px;
+	}	
+}
+/* ****************************************** Achievements section ******************************************* */
+/* ++++++++ achievements parent ++++++++  */
+.myAchievements 
+{
+	display: block ;
+	width: 100%;
+	height: auto;
+	overflow: hidden ;
+	color: #fff;
+/*	border: 3px solid #f00;*/
+	background-color: #000;
+	text-align: center;
+	padding-top: 50px; 
+	padding-bottom: 25px; 
+}
+/* ++++++++ achievements container ++++++++ */
+.myAchievements .myAchievementsContainer 
+{
+	width: 80% ;
+	height: auto;
+	overflow: hidden ;
+	/*	border: 3px solid #0ff; */
+	margin: 20px auto ;
+}
+/* ------------ achievements h2 -------------- */
+.myAchievements  h2 
+{
+	font-size: 45px;
+	text-transform: capitalize;
+}
+/* ------------ achievements boxes -------------- */
+.myAchievements .myAchievementsContainer .box
+{
+	float: left ;
+	width: 31.3333% ;
+	padding-left: 1% ;
+	padding-right: 1% ;
+}
+/* --------------- first paragraph --------------- */
+.myAchievements .myAchievementsContainer .box  p:nth-of-type(1)
+{
+	font-size: 38px;
+}
+/* --------------- second paragraph --------------- */
+.myAchievements .myAchievementsContainer .box  p:nth-of-type(2)
+{
+	font-size: 18px;
+	line-height: 1.5 ;
+}
+/* ################################ Responsive ################################ */
+@media(min-width:0px) and (max-width:700px)
+{
+	.myAchievements .myAchievementsContainer .box
+	{
+		width: 100% ;
+	}
+}
+/* ******************************************** my skills section ************************************* */
+/* --------------------- skills parent -------------------- */
+/* عشان المحتوي اللي موجود بداخل الديف يكون في المنتصف  */
+.mySkills 
+{
+	width: 100%;
+	height: auto;
+	overflow: hidden ;
+	color: #fff;
+/*	border: 3px solid #ff0; */
+	box-sizing: border-box ;
+	background-color: #000;
+	padding-top: 25px; 
+	padding-bottom: 25px; 
+}
+.mySkills  .mySkillsContainer
+{
+	width: 90% ;
+/*	border: 3px solid #f0f; */
+	margin: 20px auto ;
+}
+.mySkills  .mySkillsContainer  .box
+{
+	float: left;
+	width: 48%;
+	margin-left: 1%; 
+	margin-right: 1%;	
+}
+/* --------------  skills h2  -------------- */
+.mySkills  .mySkillsContainer h2
+{
+	text-align: center;
+	font-size: 45px;
+	text-transform: capitalize;
+}
+/* --------------  skills p  -------------- */
+.mySkills  .mySkillsContainer  p
+{
+	text-align: center ;
+	margin-bottom: 50px;
+}
+.mySkills  .mySkillsContainer  .box h4
+{
+	margin-bottom: 10px ;
+}
+/* ----------- progressbar container  ----------- */
+.mySkills  .mySkillsContainer  .box .progressbarContainer
+{
+	position: relative;
+	width: 100%;
+	height: 8px;
+	overflow: hidden;
+	padding: 5px;
+	background-color: #333 ;
+	border-radius: 10px;
+}
+/* ----------- progressbar h4  ----------- */
+.mySkills  .mySkillsContainer  .box h4
+{
+	text-transform: capitalize; 
+}
+/* ------------------------- common properities of all green progressbar spans  -------------------------- */
+.mySkills  .mySkillsContainer  .box span
+{
+	transition:  200ms  ;
+}
+/* ------------------------- common properities of all progressbar  -------------------------- */
+.mySkills  .mySkillsContainer  .box .progressbarContainer .progressbarFilling
+{
+	position: absolute; 
+	left: 0 ;
+	top: 0 ;
+	height: 100%;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-color: #0f0;
+	/* 30 milli-second كل smooth يتحرك فيتحرك بشكل progressbar عشان لما ال */
+	transition:  200ms  ;
+}
+/* ################################ Responsive ################################ */
+@media(min-width:0px) and (max-width:850px)
+{
+	.mySkills  .mySkillsContainer p
+	{
+		margin-bottom: 50px ;
+	}
+	.mySkills  .mySkillsContainer  .box
+	{
+		float: none;
+		width: 96%;
+		margin-left: 1%; 
+		margin-right: 1%;
+		margin-bottom: 20px;
+	}
+}
+/* ************************************************ testimonials section ****************************************** */
+.testimonials
+{
+	width: 100%;
+	height: auto;
+	overflow: hidden ;
+/*	border: 3px solid #f00; */
+	background-color: #ccc;
+	box-sizing: border-box ;
+	padding-top: 25px; 
+	padding-bottom: 25px; 
+	background-color: #000;	
+}
+.testimonials .testimonialsContainer .testimonialBox
+{	
+	width: 100%;
+	height: 100%;
+	overflow: hidden; 
+	color:#fff;
+/*    border: 2px solid #0f0; */
+/*	text-align: center;*/
+}
+.testimonials .testimonialsContainer  h2
+{
+	text-align: center;
+	font-size: 45px;
+	text-transform: capitalize;
+	color: #fff;
+}
+.testimonials .testimonialsContainer .testimonialBox input
+{
+	display: none;
+}
+/* --------------------------------------------  3 bullets container  --------------------------------------------  */
+.testimonials .testimonialsContainer .testimonialBox .bulletsContainer
+{
+	text-align: center ;	
+}
+/* --------------------------------------------  3 bullets  --------------------------------------------  */
+.testimonials .testimonialsContainer .testimonialBox .bulletsContainer .bullet1Class ,
+.testimonials .testimonialsContainer .testimonialBox .bulletsContainer .bullet2Class ,
+.testimonials .testimonialsContainer .testimonialBox .bulletsContainer .bullet3Class
+{
+	/*  يكونوا جنب بعض three bullets عشان ال */
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	padding:5px	;
+	margin: 10px;
+	background-color:#ccc;
+/*    border: 2px solid rgb(0, 255, 0);*/
+	border-radius: 50% ;
+	cursor: pointer;
+	transition: 1s  ease ;
+}
+
+#radio1BtnId:checked ~   .bulletsContainer #bullet1Id ,
+#radio2BtnId:checked ~   .bulletsContainer #bullet2Id ,
+#radio3BtnId:checked ~   .bulletsContainer #bullet3Id
+{
+	background-color: rgb(244,31,51) ;
+}
+
+/* --------------------- هيتحرك 6 صور bullet 3 هيتحرك 3 صور ولما اضغط علي ال bullet 2 لما اضغط علي ال --------------------- */
+#radio1BtnId:checked  ~   ul.imgAndInfoBox  
+{
+	transform: translateX(0%);
+}
+#radio2BtnId:checked  ~  ul.imgAndInfoBox  
+{
+	transform: translateX(-33.7%);
+}
+#radio3BtnId:checked  ~  ul.imgAndInfoBox  
+{
+	transform: translateX(-66.5%);
+}
+
+/* ########################## each <ul></ul> of 3 box : 3 testimonials ########################## */
+.testimonials .testimonialsContainer  .testimonialBox  ul
+{
+	width: 300% ;
+	height: auto;
+	overflow: hidden;
+/*	border: 2px solid #f0f;*/
+	list-style: none ;
+	padding: 0;
+	/* out  وفي النهاية in في البداية smooth يكون translateX عشان الحركة  */
+	transition: 2s ease-in-out ;
+}
+.testimonials .testimonialsContainer  .testimonialBox  ul li
+{
+	width:31.33%;
+	margin-left: 1% ;
+	margin-right: 1% ;
+	float:  left ;
+	height: auto ;
+	overflow: hidden ;
+/*	border: 2px solid #fff;*/
+	box-sizing: border-box;
+}
+
+/* --------------------- common properities of each box of 6 box --------------------------- */
+.testimonials .testimonialsContainer  .testimonialBox  ul li .boxPersonOpinion
+{
+	float: left ;
+	width: 31.33%;
+	margin-left: 1% ;
+	margin-right: 1% ;
+	border: 2px solid #0ff;
+	box-sizing: border-box;
+/*	padding-top: 10px ;*/
+	padding-bottom: 20px ;
+	box-sizing: border-box; 
+}
+/* ---------------------- image of box [ each image in 6 box ] ----------------------- */
+.testimonials .testimonialsContainer  .testimonialBox  ul li .boxPersonOpinion img
+{
+/*	border: 3px solid #0f0;*/
+	width:100%;
+	height:300px ;
+	
+}
+/* ---------------------- horizontal line of box [ each line in 6 box ] ----------------------- */
+.testimonials .testimonialsContainer  .testimonialBox  ul li .boxPersonOpinion  .boxPersonOpinionLine
+{
+	width: 99%;
+	height: 2px;
+	padding: 2px;
+	margin-top: -5px ;
+	background-color: chartreuse ;
+}
+/* ---------------------- date of box [ each date in 6 box ] ----------------------- */
+.testimonials .testimonialsContainer  .testimonialBox  ul li .boxPersonOpinion  .boxPersonOpinionDate
+{
+	display: block;
+	margin-left: 10px;
+	margin-top: 20px;
+	color: chartreuse ;
+}
+/* --------------------------- <h5></h5> of each box of person opinion --------------------------- */
+.testimonials .testimonialsContainer  .testimonialBox  ul li .boxPersonOpinion h5 
+{
+	color: #fff;
+	font-size: 18px;
+	margin-top: 10px ;
+	margin-bottom: 10px ;
+	margin-left: 10px ;
+	text-transform: capitalize;
+}
+/* --------------------------- <p></p> of each box of person opinion --------------------------- */
+/* ---------------------- paragraph under image of box [ each paragraph in 6 box ] ----------------------- */
+.testimonials .testimonialsContainer  .testimonialBox  ul li .boxPersonOpinion p.paragraphImageBox
+{
+	font-size: 15px;
+	margin-left: 10px ;
+}
+/* ---------------------- button under image of box [ each button in 6 box ] ----------------------- */
+.testimonials .testimonialsContainer  .testimonialBox  ul li .boxPersonOpinion button.readMoreBtnOpinion
+{
+	font-size: 12px;
+	padding: 12px;
+	margin-left: 10px ;
+	margin-bottom: 10px ;
+	border-radius: 20px ;
+	border: 0 ;
+	outline: 0 ;
+	text-transform: uppercase ;
+	letter-spacing: 2px;
+	background-color: chartreuse ;
+	font-weight: bold;
+	cursor: pointer ;
+}
+/* ################################ Responsive ################################ */
+@media(min-width:0px) and (max-width:1020px)
+{
+	/* ------------------------  الثالث هخليه في صف لوحده box وهحطهم جنب بعض وال two boxes هجيب اول  ------------------------ */
+	.testimonials .testimonialsContainer  .testimonialBox  ul li .boxPersonOpinion:nth-of-type(1) ,
+	.testimonials .testimonialsContainer  .testimonialBox  ul li .boxPersonOpinion:nth-of-type(2) 
+	{
+		width:48%;
+		float:  left;
+		text-align: center ;
+		margin-bottom: 20px ;
+	}
+	/* ------------------------ الثالث هخليه في صف لوحده box ال ------------------------ */
+	.testimonials .testimonialsContainer  .testimonialBox  ul li .boxPersonOpinion:nth-of-type(3)
+	{
+		/*  total_width = width + margin_left + margin_right = 50 + 25 + 25 = 100%		*/
+		width:50%;
+		margin-left: 25% ;
+		margin-right: 25% ;
+		margin-bottom: 0 ;
+		float:  none;
+		height: auto ;
+		overflow: hidden ;
+		text-align: center ;
+		
+	}
+	.testimonials .testimonialsContainer  .testimonialBox  ul li 
+	{
+		display: inline-block;
+		height: auto ;
+		overflow: hidden ;
+		box-sizing: border-box;
+	}
+	.testimonials .testimonialsContainer  .testimonialBox  ul li .boxPersonOpinion img
+	{
+		width:100%;
+		height:180px ;
+	}
+	
+}
+
+
+/* ******************************************* services section *************************************************** */
+.services
+{
+	width: 100%;
+	height: auto;
+	overflow: hidden ;
+/*	border: 3px solid #f00; */
+	background-color: #000;
+	box-sizing: border-box ;
+	padding-top: 25px; 
+	padding-bottom: 25px; 
+	text-align: center ;
+}
+/* ****************** services container ******************  */
+.services  .servicesContainer
+{
+	width: 90% ;
+	height: auto;
+	overflow: hidden ;
+/*	border: 3px solid #0ff; */
+	margin: 10px auto ;
+}
+/* ************************** service header : h2  **************************  */
+.services  .servicesContainer  h2
+{
+	text-transform: capitalize ;
+	font-size: 40px;
+	color: #fff;
+}
+/* ************************** service header : p  **************************  */
+.services  .servicesContainer  p
+{
+	color: #fff;	
+}
+/* ************************** service header : button  **************************  */
+.services  .servicesContainer  .servicesBtnClass
+{
+	width: 150px ;
+	height: 50px ;
+	padding: 10px;
+	font-size: 14px;
+	font-weight: bold ;
+	cursor: pointer ;
+	text-transform: uppercase ;
+	border-radius: 20px ;
+	border: 0 ;
+	outline: 0 ;
+	background-color: chartreuse ;
+	letter-spacing: 2px ;
+	margin:  0 ;
+}
+/* ***************************** boxes container ***************************** */
+.services  .servicesContainer .servicseBoxsContainer
+{
+	width: 100% ;
+	height: auto;
+	overflow: hidden ;
+	margin: 30px auto ;
+}
+/* ************************** service 1 **************************  */
+.services  .servicesContainer .servicseBoxsContainer .servicesBox 
+{
+	float: left; 
+	/* total_width = width + margin_left + marginright = 31.3333 + 1 + 1 = 33.3333% 	*/
+	width: 31.3333% ;
+	margin: 1% ;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	background-color: #333 ;
+}
+/* ****************** service 1 container ******************  */
+.services  .servicesContainer .servicseBoxsContainer .servicesBox .servicesIcon
+{
+	/*	border: 3px solid #f0f; */
+}
+/* ****************** service  container : icon ******************  */
+.services  .servicesContainer .servicseBoxsContainer .servicesBox .servicesIcon  i
+{
+	font-size: 55px;
+	color: chartreuse ;
+}
+/* ****************** service  container : h4 ******************  */
+.services  .servicesContainer .servicseBoxsContainer .servicesBox .servicesIcon  h4
+{
+	margin-bottom: 10px ;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+/* ****************** service  container : span ******************  */
+.services  .servicesContainer .servicseBoxsContainer .servicesBox .servicesIcon  span
+{
+	display: block;
+	width: 50px ;
+	height: 0.5px ;
+	padding: 0.5px;
+	background-color:#0f0;
+	margin: 2px auto; 
+}
+/* ########################################### Responsive ######################################## */
+@media(min-width:0px) and (max-width:600px)
+{
+	/* ************************** service 1 **************************  */
+	.services  .servicesContainer .servicseBoxsContainer .servicesBox 
+	{
+		float: none ;
+		/* total_width= width + margin_left + marginright = 90 + 5 + 5 = 100% 	*/		
+		width: 90% ;
+		margin: 5% ;
+	}
+}
+@media(min-width:601px) and (max-width:900px)
+{
+	/* ************************** service 1 **************************  */
+	.services  .servicesContainer .servicseBoxsContainer .servicesBox 
+	{
+		/* total_width= width + margin_left + marginright = 48 + 1 + 1 = 50% 	*/
+		width: 48%;
+		margin: 1% ;
+	}
+}
+/* ****************************************** our projects section ************************************************ */
+.ourProject
+{
+	width: 100%;
+	height: auto;
+	/* عشان الابناء او المحتوي ميخرجش بره الاب بتاعه  */
+	overflow: hidden ;
+/*	border: 3px solid #f00; */
+	box-sizing: border-box ;
+	padding-top: 25px; 
+	padding-bottom: 25px; 
+	background-color: #000;
+}
+/* ------------------- our projects container ------------------- */
+.ourProject .ourProjectContainer
+{
+	width: 80% ;
+	height: auto;
+	/* عشان الابناء او المحتوي ميخرجش بره الاب بتاعه  */
+	overflow: hidden ;
+/*	border: 3px solid #0ff; */
+	margin: 10px auto ;
+}
+/* ------------------- our projects header : h2 ------------------- */
+.ourProject  .ourProjectContainer h2 
+{
+	font-size: 50px ;
+	margin-top:  20px ;
+	margin-bottom:  40px ;
+}
+/* ------------------- our projects header : p ------------------- */
+.ourProject  .ourProjectContainer p
+{
+	margin-bottom: 80px;
+}
+/* ------------------- common properities between  h2 , p  ------------------- */
+.ourProject  .ourProjectContainer h2  ,
+.ourProject  .ourProjectContainer p
+{
+	text-align: center; 
+	text-transform: capitalize ;
+	color: #fff;
+}
+/* ----------------------- boxes of our projects ----------------------- */
+.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox1 ,
+.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox2 ,
+.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox3 ,
+.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox4
+{
+	float: left ;
+	margin: 1% ;
+}
+/*  first and fourth box has the same width = 30% الصورة الاولي والرابعة هيكون لها نفس العرض يعني */
+.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox1 ,
+.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox4
+{
+	/* total_width = width + margin_left + margin_right = 28 + 1 + 1 = 30%	*/
+	width: 28% ;
+	height: 450px ;
+	overflow: hidden ;
+/*	border: 3px solid #f0f; */
+	box-sizing: border-box ;
+}
+/*  second and third box has the same width = 70% الصورة الثانية والثالثة  هيكون لها نفس العرض يعني */
+.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox2 ,
+.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox3
+{
+	/* total_width = width + margin_left + margin_right = 68 + 1 + 1 = 70%	*/
+	width: 68% ;
+	height: 450px ;
+	overflow: hidden ;
+/*	border: 3px solid #ff0; */
+	box-sizing: border-box ;
+}
+.ourProject  .ourProjectContainer .ourProjectContainerBoxes  img
+{
+	width: 100% ;
+	height: 100% ;
+}
+/* ############################################# Responsive  ############################################# */
+/* ************** mobile screen ************** */
+@media (min-width:0px) and (max-width:775px) 
+{
+	.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox1 ,
+	.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox2 ,
+	.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox3 ,
+	.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox4
+	{
+	/* total_width = width + margin_left + margin_right = 90 + 5 + 5 = 100%	 */
+		width: 90% ;
+		height: 400px;
+		float: none;
+		margin: 5%  auto;
+	}
+
+}
+/* ************** tablet screen ************** */
+@media (min-width:776px) and (max-width:1000px) 
+{ 
+	/* total_width = width + margin_left + margin_right = 48 + 1 + 1 = 50%	 */
+	.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox1 ,
+	.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox2 ,
+	.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox3 ,
+	.ourProject  .ourProjectContainer .ourProjectContainerBoxes  .ourProjectBox4
+	{
+		/*		*/
+		width: 48% ;
+		float: left;
+		margin: 1%  ;
+	}
+}
+/* ********************************************** resume  *************************************************** */ 
+.resume
+{
+	width: 100%;
+	height: auto;
+	/* عشان الابناء او المحتوي ميخرجش بره الاب بتاعه  */
+	overflow: hidden ;
+/*	border: 3px solid #f00; */
+	box-sizing: border-box ;
+	padding-top: 25px; 
+	padding-bottom: 25px; 
+	background-color: #000;
+}
+/* ------------------- our projects container ------------------- */
+.resume .resumeContainer
+{
+	width: 90% ;
+	height: auto;
+	/* عشان الابناء او المحتوي ميخرجش بره الاب بتاعه  */
+	overflow: hidden ;
+/*	border: 3px solid #0ff; */
+	margin: 10px auto ;
+}
+/* ------------------- our projects header : h2 ------------------- */
+.resume  .resumeContainer h2 
+{
+	font-size: 50px ;
+	margin-top:  20px ;
+	margin-bottom:  40px ;
+}
+/* ------------------- our projects header : p ------------------- */
+.resume  .resumeContainer .resumeHeadPara
+{
+	margin-bottom: 80px;
+}
+/* ------------------- common properities between  h2 , p  ------------------- */
+.resume  .resumeContainer h2  ,
+.resume  .resumeContainer .resumeHeadPara
+{
+	text-align: center; 
+	text-transform: capitalize ;
+	color: #fff;
+}
+/* -------------------  common properities of each box of 6 boxes ------------------- */
+.resume  .resumeContainer  .resumeContainerBox
+{
+/*	border: 2px solid #00f;*/
+	box-sizing: border-box; 
+	width: 48% ;
+	height: auto ;
+	overflow: hidden ;
+	float: left ;
+	margin: 1% ;
+}
+/* ---------- common properities : left part [ icon and vertical line ] && right part [ info resume box ] ------------ */
+.resume  .resumeContainer  .resumeContainerBox .resumeBoxIconLineContainer ,
+.resume  .resumeContainer  .resumeContainerBox .resumeBoxInfoContainer
+{
+/*	border: 2px solid #fff;*/
+	float: left;
+}
+/* ++++++++++++++++++++ left part [ icon and vertical line ] ++++++++++++++++++++ */
+.resume  .resumeContainer  .resumeContainerBox .resumeBoxIconLineContainer ,
+{
+	width: 20%;	
+}
+/* ######### left part : icon  ######### */
+.resume  .resumeContainer  .resumeContainerBox .resumeBoxIconLineContainer i
+{
+	font-size: 18px;
+	background-color: chartreuse ;
+	color: #fff ;
+	border-radius: 50% ;
+	padding: 15px ;
+}
+/* ######### left part : line  ######### */
+.resume  .resumeContainer  .resumeContainerBox .resumeBoxIconLineContainer .resumeLine
+{
+	display: block;
+	width: 0.5px;
+	height: 90px;
+	padding: 1px ;
+	background-color: #555;
+	color: #fff;
+	margin-left: 25px;
+}
+/* ++++++++++++++++++++++++++++++++ right part : info resume box ++++++++++++++++++++++++++ */
+.resume  .resumeContainer  .resumeContainerBox .resumeBoxInfoContainer
+{
+/*	border: 2px solid #f00;*/
+	width: 80%;
+	height: auto ;
+	overflow: hidden ;
+}
+/* right part : info resume box :  date of box  */
+.resume  .resumeContainer  .resumeContainerBox .resumeBoxInfoContainer .resumeDateBox
+{
+	display: block ;
+	width: 110px;	
+	margin-left: 15px ;
+	margin-bottom: 10px ;
+	padding: 10px; 
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	font-size: 13px;
+	font-weight: bold;
+/*	border: 2px solid #f0f;*/
+	border-radius: 20px;
+	text-transform: uppercase ;
+}
+/* right part : info resume box : header */
+.resume  .resumeContainer  .resumeContainerBox .resumeBoxInfoContainer .resumeHeadBox
+{
+	text-transform: uppercase ;
+	color: #fff;
+	font-size: 18px; 
+	margin-left: 10px ;
+}
+/* right part : info resume box : paragraph */
+.resume  .resumeContainer  .resumeContainerBox .resumeBoxInfoContainer .paraBox
+{
+/*	border: 2px solid #ff0;*/
+	margin-left: 10px ;
+	line-height: 1.5 ;
+	color: #fff ;
+}
+/* ############################################# Responsive  ############################################# */
+/* ************** mobile screen ************** */
+@media (min-width:0px) and (max-width:851px) 
+{
+	.resume  .resumeContainer  .resumeContainerBox
+	{
+		box-sizing: border-box; 
+		width: 90% ;
+		float: none;
+		margin: 5% ;
+/*		border: 2px solid #0f0;*/
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.resume  .resumeContainer  .resumeContainerBox .resumeBoxInfoContainer
+	{
+/*		border: 2px solid #f00;*/
+		margin-left: 15px ;
+	}
+}
+/* **************************************** contact us section ***************************************************** */
+.contactUs
+{
+	width: 100%;
+	height: auto;
+	overflow: hidden ;
+/*	border: 3px solid #f00; */
+	background-color: #ccc;
+	box-sizing: border-box ;
+	padding-top: 25px; 
+	padding-bottom: 25px; 
+	background-color: #000;
+}
+.contactUs  .contactUsContainer
+{
+	width: 90% ;
+	height: auto;
+	overflow: hidden ;
+/*	border: 3px solid #0ff; */
+	margin: 10px auto ;
+}
+.contactUs  .contactUsContainer h2 
+{
+	font-size: 50px ;
+	margin-top:  20px ;
+	margin-bottom:  40px ;
+}
+.contactUs  .contactUsContainer .contactUsHeadPara
+{
+	margin-bottom: 80px;
+}
+.contactUs  .contactUsContainer h2 ,
+.contactUs  .contactUsContainer .contactUsHeadPara
+{
+	text-align: center; 
+	text-transform: capitalize ;
+	color: #fff;
+}
+/* ################ left part : contact us information ################ */
+.contactUs  .contactUsContainer .leftContactUsPart ,
+.contactUs  .contactUsContainer .rightContactUsPart 
+{
+	float: left ; 
+	width: 48%;
+	height: auto;
+	overflow: hidden ;
+	margin-left: 1% ;
+	margin-right: 1% ;
+/*	border: 3px solid #f0f; */
+	box-sizing: border-box;
+}
+.contactUs  .contactUsContainer .leftContactUsPart h3
+{
+	text-transform: capitalize ;
+	color: #fff;
+	font-size: 30px;
+	margin: 0 ;	
+}
+.contactUs  .contactUsContainer .leftContactUsPart p
+{
+	color: #fff;
+	line-height: 1.5 ;
+}
+/* ------------- envelope and phone box container ------------------ */
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo
+{
+	/*	border: 3px solid #ff0; */
+}
+/* ------------ envelope  box [ icon and icon information] , phone box [ icon and icon information] ------------ */
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .messageContainer , 
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .phoneContainer 
+{
+	width: 100%;
+	box-sizing: border-box;
+	margin-top: 30px ;
+	margin-bottom: 30px ;
+}
+/* ------------ envelope  box container [ icon and icon information] == first row ------------ */
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .messageContainer 
+{
+/*	border: 3px solid #0f0; */
+}
+/* ------------ phone  box container [ icon and icon information] == second row ------------ */
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .phoneContainer 
+{
+/*	border: 3px solid #00f; 	*/
+}
+/* envelope [ icon and icon information] && phone [ icon and icon information] عشان الايقونة والمعلومات تيجي جنب بعض علي نفس السطر */
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .messageContainer .messageIcon ,
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .messageContainer .messageIconSpan
+{
+	display: inline-block;
+}
+/* envelope icon information && phone icon information عشان سطرين المعلومات يجوا تحت بعض علي  مش في نفس السطر */
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .messageContainer .messageIconSpan span ,
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .phoneContainer .phoneIconSpan     span
+{
+	display: block;
+	margin-left: 10px;
+	color: #fff;
+	font-weight: bold ;
+	line-height: 1.2 ;
+}
+/* -------------------- envelope icon , phone icon الايقونات -------------------- */
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .messageContainer .messageIcon i ,
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .phoneContainer .phoneIcon  i
+{
+	font-size: 45px;
+	color : #fff ;
+	border: 0 ;
+	color: chartreuse;
+}
+/*  icon and icon information [ envelope , phone ] عشان الايقونة والمعلومات الخاصة به يكونوا جنب بعض  */
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .phoneContainer .phoneIcon 	,
+.contactUs  .contactUsContainer .leftContactUsPart .leftContactUsPartInfo .phoneContainer .phoneIconSpan
+{
+	display: inline-block;
+	margin-top:15px;
+}
+/* ------------------ left part contact us icons  : facebook , twitter , youtube , github ------------------------- */
+.contactUs  .contactUsContainer .leftContactUsPart .contactUsICons
+{
+/*	border: 2px solid #00f;*/
+	margin-top: 30px ;
+	margin-bottom: 30px ;
+}
+.contactUs  .contactUsContainer .leftContactUsPart .contactUsICons ul
+{
+	list-style: none ;
+	margin: 0 ;
+	padding: 0; 
+}
+.contactUs  .contactUsContainer .leftContactUsPart .contactUsICons ul li
+{
+	display: inline-block; 
+	background-color: #222;
+	padding: 10px;
+	border-radius: 50% ;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 20px;
+}
+.contactUs  .contactUsContainer .leftContactUsPart .contactUsICons ul li a
+{
+	color: #fff;
+	text-decoration: none ;
+	padding: 5px;
+}
+.contactUs  .contactUsContainer .leftContactUsPart .contactUsICons ul li a i
+{
+	font-size: 25px;
+}
+/* ############################################## right part : contact us form #####################################  */
+.contactUs  .contactUsContainer  .rightContactUsPart
+{
+/*	border: 2px solid #000;*/
+}
+.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=text ] ,
+.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=email ]
+{
+	width: 45%;
+	height:25px;
+	padding: 2%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border-radius: 20px;
+	border: 0 ;
+	outline: 0 ;
+	background-color: #222;
+	font-size: 15px;
+	color: #fff;
+}
+.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=text ] 
+{
+	float: left ;
+	/* padding-left = 2% , padding-right = 2% , margin-right: 1% --> width = 45 + 2 + 2 + 1 = 50%  */
+	margin-right: 1% ;
+}
+.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=email ]
+{
+	float: right;
+	/* padding-left = 2% , padding-right = 2% , margin-right: 1% --> width = 45 + 2 + 2 + 1 = 50%  */
+	margin-left: 1% ;
+}
+.contactUs  .contactUsContainer  .rightContactUsPart form input#subjectId  
+{
+	display: block;
+	/* padding-left = 2% , padding-right = 2% , margin-right: 1% --> width = 95 + 2 + 2 + 1 = 100%  */
+	width: 95.9%;
+	margin-bottom: 20px;
+}
+/* -------------------- "textarea" inputField : form -------------------- */
+.contactUs  .contactUsContainer  .rightContactUsPart form textarea 
+{
+	display: block;
+	width: 96%;
+	border-radius: 20px;
+	background-color: #222;
+	padding: 2%;
+	padding-top: 4% ;
+	font-size: 14px;
+	color: #fff;
+	border: 0 ;
+	outline: 0 ;
+}
+/* ######################### give style to placeholder of inputFileds of form ########################## */
+.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=text ]::-webkit-input-placeholder ,
+.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=email]::-webkit-input-placeholder ,
+.contactUs  .contactUsContainer  .rightContactUsPart form textarea::-webkit-input-placeholder
+{
+	text-transform: uppercase;
+	color: #999;
+	font-size: 14px;
+}
+/* -------------------- "send message" button : form -------------------- */
+.contactUs  .contactUsContainer  .rightContactUsPart form input[ type=submit ]
+{
+	padding: 18px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	border-radius: 20px;
+	text-transform: uppercase ;
+	border: 0 ;
+	outline:  0 ;
+	cursor: pointer ;
+	background-color: chartreuse ;
+	font-weight: bold;
+	letter-spacing: 2px ;
+}
+/* ################################ Responsive ################################ */
+@media(min-width:0px) and (max-width:877px)
+{
+	.contactUs  .contactUsContainer .leftContactUsPart   ,
+	.contactUs  .contactUsContainer  .rightContactUsPart
+	{
+		display: block ;
+		width: 99% ;
+		float: none ;
+	}
+}
+/* ********************************************** footer section ************************************************* */
+.footer
+{
+	width: 100%;
+	height: auto;
+	overflow: hidden ;
+/*	border: 3px solid #f00; */
+	background-color: #000;
+	box-sizing: border-box ;
+	padding-top: 25px; 
+	padding-bottom: 25px; 
+}
+.footer .footerContainer
+{
+	width: 90% ;
+	height: auto;
+	overflow: hidden ;
+/*	border: 3px solid #0ff; */
+	margin: 50px auto ;
+}
+/* ---------------------- 4 boxes of footer ---------------------- */
+.footer .footerContainer .socialLinksBox
+{
+	width: 25% ; 
+	float: left ;
+}
+/* ---------------------- 4 boxes of footer ---------------------- */
+.footer .footerContainer .socialLinksBox ul li h3
+{
+	text-transform: capitalize ;
+}
+.footer .footerContainer .socialLinksBox ul 
+{
+	list-style: none ;
+	padding: 0; 
+}
+.footer .footerContainer .socialLinksBox ul li
+{
+	margin: 20px;
+}
+.footer .footerContainer .socialLinksBox ul li h3
+{
+	font-size: 25px;
+	color: #fff;
+}
+.footer .footerContainer .socialLinksBox ul li p
+{
+	color: #fff ;
+	font-size: 16px;
+}
+/* ----------------- font-awesome icons ----------------- */
+.footer .footerContainer .socialLinksBox ul li i
+{
+	font-size: 22px;	
+	color: #fff;
+}
+/* ---------------------------- text after font-awesome icon ------------------------ */
+.footer .footerContainer .socialLinksBox ul li a
+{
+	text-decoration: none ;
+	color:#fff;	
+	text-transform: capitalize ;
+	margin-left: 10px;
+	font-size: 14px;
+}
+/* about part of footer : social icons [ twitter , facebook , instagram ] */
+.footer .footerContainer .socialLinksBox ul li.footerFacebookIcon ,
+.footer .footerContainer .socialLinksBox ul li.footerTwitterIcon ,
+.footer .footerContainer .socialLinksBox ul li.footerInstagramIcon
+{
+	float: left;
+	background-color: #333 ;
+	border-radius: 50%;
+	width: 41px;
+	height: 33px ;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 10px;
+}
+/* ------------------------- footer paragraph --------------------- */
+.footer   span.footerPara
+{
+	display: block ;
+/*	border: 2px solid #ff0;*/
+	text-align: center ;
+	font-size: 20px;
+	text-transform: capitalize ;
+	color: #fff;
+}
+/* -------------  <ul></ul> مياثرش علي العناصر اللي تحت ال float عشان ال ------------- */
+.clearFloat
+{
+	clear: both;
+}
+/* ########################################### Responsive ######################################## */
+@media(min-width:0px) and (max-width:900px)
+{
+	.footer .footerContainer .socialLinksBox
+	{
+		display: block ;
+		width: 100% ;
+	}
+	/* -------------- footer paragraph -------------	*/
+	.footer span.footerPara
+	{
+		font-size: 17px;
+	}
+	/* -------------- footer headers[ Links , More , Have A Question? ] -------------	*/
+	.footer .footerContainer .socialLinksBox ul li h3
+	{
+		font-size: 30px;
+	}
+	/* -------------- paragraph of footer headers[ Links , More , Have A Question? ] -------------	*/
+	.footer .footerContainer .socialLinksBox ul li a
+	{
+		font-size: 16px;
+		padding: 0;
+	}
+	/* -------------- twitter , facebook , instagram icons -------------	*/
+	.footer .footerContainer .socialLinksBox ul li  i
+	{
+		font-size: 22px;
+	}
+}
