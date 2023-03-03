@@ -7,8 +7,8 @@ var headerH2Span1Var = document.getElementById("headerH2Span1Id") ,
 	/* second <p> of <h2> of header section */
 	headerPara2Var = document.getElementById("headerPara2Id"),
 	headerH2Span1String="i'm" ,
-	headerH2Span2String ="steve williams." ,
-	headerPara2String = "a freelance web designer" ;
+	headerH2Span2String ="mahmoud Eltokhey." ,
+	headerPara2String = "a freelance web developer" ;
 	// " I'm " counter
 var count1Var=0 ,
 	// " Steve Williams. " counter
@@ -19,9 +19,9 @@ var count1Var=0 ,
 window.onload =function()
 {
 
-	var headerH2Span1VarInterval =  setInterval( h1Span1Func, 150)  ,
-		headerH2Span2VarInterval =  setInterval( h1Span2Func, 250)  ,
-		headerH2ParaVarInterval  =  setInterval( h1Para2Func, 300) ;		
+	var headerH2Span1VarInterval =  setInterval( h1Span1Func, 200)  ,
+		headerH2Span2VarInterval =  setInterval( h1Span2Func, 400)  ,
+		headerH2ParaVarInterval  =  setInterval( h1Para2Func, 600) ;		
 
 }		
 /* first <span> of <h2> of header section */
@@ -112,8 +112,8 @@ function h1Para2Func()
 				aboutEmailInterval		= setInterval(aboutEmailFunc 	, 600) 		,
 				aboutZipCodeInterval	= setInterval(aboutZipCodeFunc 	, 600)		,
 				aboutPhoneInterval 		= setInterval(aboutPhoneFunc 	, 600)		,
-				// هيزود 1 علي عدد المشاريع كل 50 ميللي ثعنية
-				aboutProjectsNumInterval = setInterval(aboutProjectsNumFunc , 50)	;
+				// هيزود 1 علي عدد المشاريع كل 200 ميللي ثعنية
+				aboutProjectsNumInterval = setInterval(aboutProjectsNumFunc , 200)	;
 		}
 		// #####################################  my skills section : progressbar #####################################
 		// هتشتغل my sckills section لو البكرة اتحركت راسيا لمسافة اكبر من او تساوي 1820 بيكسل فالنسب المئوية اللي موجودة في ال
@@ -318,12 +318,12 @@ var aboutNameEl 	   = document.getElementById("nameSpanId"),
 	aboutPhoneEl 	   = document.getElementById("phoneSpanId") ,
 	aboutProjectsNumEl = document.getElementById("prohectNumId") ;
 	
-var aboutNameString ="steve williams",
-	aboutBirthdayString ="january 01,1980",
-	aboutEmailString ="stevewill@gmail.com",
-	aboutAddressString ="new work CA 829 USA",
-	aboutZipCodeString ="758844", 
-	aboutPhoneString ="+4854 384 0000", 
+var aboutNameString ="Mahmoud Eltokhey",
+	aboutBirthdayString ="August 05,1998",
+	aboutEmailString ="mahmoudtokhey@gmail.com",
+	aboutAddressString ="Cairo / Egypt",
+	aboutZipCodeString ="6221101", 
+	aboutPhoneString ="01274792335", 
 	aboutProjectsNumVar = 0 ;
 	
 var aboutNameCounter 	 = 0 ,
@@ -394,7 +394,7 @@ function aboutPhoneFunc()
 }
 function aboutProjectsNumFunc()
 {
-	if( aboutProjectsNumVar <= 120 )
+	if( aboutProjectsNumVar <= 60 )
 		{
 			aboutProjectsNumEl.innerHTML = aboutProjectsNumVar ;
 			aboutProjectsNumVar++;

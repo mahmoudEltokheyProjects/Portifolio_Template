@@ -264,6 +264,11 @@ body
 	margin-top: 30px ;
 	margin-right: 20px ;
 }
+.header .headerContainer .headerInfo .workBtnClass
+{
+	text-decoration: none;
+	color: #fff;
+}
 /* ----------------------- first button of header section ----------------------- */
 .header .headerContainer .headerInfo .hireBtnClass 
 {
@@ -299,7 +304,7 @@ body
 .header .headerContainer .headerInfo #headerH2Span2Id
 {
 	text-transform: capitalize;
-	font-size: 55px;
+	font-size: 50px;
 }
 /* first <span> of <h2> of header section */
 .header .headerContainer .headerInfo #headerH2Span1Id
@@ -1572,14 +1577,23 @@ body
 	margin: 10px;
 }
 /* ------------------------- footer paragraph --------------------- */
+.footer   p.footerPara
+{
+	display: block ;
+	font-size: 18px;
+	text-transform: capitalize ;
+	color: #fff;
+	line-height: 1.5;
+	
+}
 .footer   span.footerPara
 {
 	display: block ;
-/*	border: 2px solid #ff0;*/
-	text-align: center ;
-	font-size: 20px;
+	font-size: 18px;
 	text-transform: capitalize ;
 	color: #fff;
+	line-height: 1.5;
+	text-align: center;
 }
 /* -------------  <ul></ul> مياثرش علي العناصر اللي تحت ال float عشان ال ------------- */
 .clearFloat
@@ -1595,7 +1609,7 @@ body
 		width: 100% ;
 	}
 	/* -------------- footer paragraph -------------	*/
-	.footer span.footerPara
+	.footer p.footerPara
 	{
 		font-size: 17px;
 	}
